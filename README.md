@@ -2,9 +2,12 @@
 Esta es la prueba técnica para QA tester junior - 02/12/2025 para la empresa CINTE
 
 1. Datos aspirante.
+```
 Mairon Stveen Delgado García
 Rol: QA tester Junior
 Fecha de envío prueba: 02/12/2025
+```
+
 
 2. Tecnologías utilizadas
 
