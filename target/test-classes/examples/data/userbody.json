@@ -1,0 +1,17 @@
+{
+  "email": "test@mail.com",
+  "username": "testuser",
+  "password": "pass123",
+  "name": {
+    "firstname": "john",
+    "lastname": "doe"
+  },
+  "address": {
+    "geolocation": {"lat": "1", "long": "2"},
+    "city": "Bogota",
+    "street": "Calle falsa",
+    "number": 123,
+    "zipcode": "11111"
+  },
+  "phone": "123-456-789"
+}

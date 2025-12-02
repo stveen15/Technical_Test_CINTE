@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"examples\/products\/products[1:7]","start":1764619205789,"end":1764619206479,"title":"examples\/products\/products[1:7] 15:00:05.789-15:00:06.479 Get all ids, an post new id with an id already create."},{"id":2,"group":1,"content":"examples\/products\/products[2:24]","start":1764619206484,"end":1764619207173,"title":"examples\/products\/products[2:24] 15:00:06.484-15:00:07.173 Post a new id with a external JSON."},{"id":3,"group":1,"content":"examples\/products\/products[3:50]","start":1764619207177,"end":1764619207859,"title":"examples\/products\/products[3:50] 15:00:07.177-15:00:07.859 Update data with put an patch"},{"id":4,"group":1,"content":"examples\/products\/products[4:75]","start":1764619207863,"end":1764619208207,"title":"examples\/products\/products[4:75] 15:00:07.863-15:00:08.207 Detele product already created"},{"id":5,"group":1,"content":"examples\/products\/products[5:82]","start":1764619208211,"end":1764619208549,"title":"examples\/products\/products[5:82] 15:00:08.211-15:00:08.549 Validate data type"},{"id":6,"group":1,"content":"examples\/products\/products[6.1:101]","start":1764619208553,"end":1764619208900,"title":"examples\/products\/products[6.1:101] 15:00:08.553-15:00:08.900 Get a product with a no-existent id"},{"id":7,"group":1,"content":"examples\/products\/products[6.2:102]","start":1764619208904,"end":1764619209264,"title":"examples\/products\/products[6.2:102] 15:00:08.904-15:00:09.264 Get a product with a no-existent id"},{"id":8,"group":1,"content":"examples\/products\/products[6.3:103]","start":1764619209268,"end":1764619209602,"title":"examples\/products\/products[6.3:103] 15:00:09.268-15:00:09.602 Get a product with a no-existent id"},{"id":9,"group":1,"content":"examples\/products\/products[6.4:104]","start":1764619209606,"end":1764619209952,"title":"examples\/products\/products[6.4:104] 15:00:09.606-15:00:09.952 Get a product with a no-existent id"},{"id":10,"group":1,"content":"examples\/products\/products[7:106]","start":1764619209956,"end":1764619210276,"title":"examples\/products\/products[7:106] 15:00:09.956-15:00:10.276 try to delete a id non-existent"},{"id":11,"group":1,"content":"examples\/products\/products[8:113]","start":1764619210280,"end":1764619210609,"title":"examples\/products\/products[8:113] 15:00:10.280-15:00:10.609 Validate data type"},{"id":12,"group":1,"content":"examples\/products\/products[9:121]","start":1764619210613,"end":1764619210955,"title":"examples\/products\/products[9:121] 15:00:10.613-15:00:10.955 Validate miss fields"},{"id":13,"group":1,"content":"examples\/products\/products[10:129]","start":1764619210959,"end":1764619211304,"title":"examples\/products\/products[10:129] 15:00:10.959-15:00:11.304 Create new product with non-existent field"},{"id":14,"group":1,"content":"examples\/products\/products[11:145]","start":1764619211308,"end":1764619211632,"title":"examples\/products\/products[11:145] 15:00:11.308-15:00:11.632 range in price very high"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

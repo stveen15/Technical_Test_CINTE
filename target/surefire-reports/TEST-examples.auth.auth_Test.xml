@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="examples.auth.auth_Test" time="5.567" tests="7" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="17"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\Users\Mairon\Documents\Karate automation\technical_test\target\test-classes;C:\Users\Mairon\Documents\Karate automation\technical_test\target\classes;C:\Users\Mairon\.m2\repository\com\intuit\karate\karate-junit5\1.4.1\karate-junit5-1.4.1.jar;C:\Users\Mairon\.m2\repository\com\intuit\karate\karate-core\1.4.1\karate-core-1.4.1.jar;C:\Users\Mairon\.m2\repository\org\graalvm\js\js-scriptengine\22.3.3\js-scriptengine-22.3.3.jar;C:\Users\Mairon\.m2\repository\org\graalvm\sdk\graal-sdk\22.3.3\graal-sdk-22.3.3.jar;C:\Users\Mairon\.m2\repository\org\graalvm\js\js\22.3.3\js-22.3.3.jar;C:\Users\Mairon\.m2\repository\org\graalvm\regex\regex\22.3.3\regex-22.3.3.jar;C:\Users\Mairon\.m2\repository\org\graalvm\truffle\truffle-api\22.3.3\truffle-api-22.3.3.jar;C:\Users\Mairon\.m2\repository\com\ibm\icu\icu4j\71.1\icu4j-71.1.jar;C:\Users\Mairon\.m2\repository\org\thymeleaf\thymeleaf\3.1.2.RELEASE\thymeleaf-3.1.2.RELEASE.jar;C:\Users\Mairon\.m2\repository\ognl\ognl\3.3.4\ognl-3.3.4.jar;C:\Users\Mairon\.m2\repository\org\javassist\javassist\3.29.0-GA\javassist-3.29.0-GA.jar;C:\Users\Mairon\.m2\repository\org\attoparser\attoparser\2.0.7.RELEASE\attoparser-2.0.7.RELEASE.jar;C:\Users\Mairon\.m2\repository\org\unbescape\unbescape\1.1.6.RELEASE\unbescape-1.1.6.RELEASE.jar;C:\Users\Mairon\.m2\repository\org\slf4j\slf4j-api\2.0.7\slf4j-api-2.0.7.jar;C:\Users\Mairon\.m2\repository\com\linecorp\armeria\armeria\1.25.2\armeria-1.25.2.jar;C:\Users\Mairon\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.15.2\jackson-core-2.15.2.jar;C:\Users\Mairon\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.15.2\jackson-annotations-2.15.2.jar;C:\Users\Mairon\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.15.2\jackson-databind-2.15.2.jar;C:\Users\Mairon\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.15.2\jackson-datatype-jdk8-2.15.2.jar;C:\Users\Mairon\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.15.2\jackson-datatype-jsr310-2.15.2.jar;C:\Users\Mairon\.m2\repository\io\micrometer\micrometer-core\1.11.3\micrometer-core-1.11.3.jar;C:\Users\Mairon\.m2\repository\io\micrometer\micrometer-commons\1.11.3\micrometer-commons-1.11.3.jar;C:\Users\Mairon\.m2\repository\io\micrometer\micrometer-observation\1.11.3\micrometer-observation-1.11.3.jar;C:\Users\Mairon\.m2\repository\org\hdrhistogram\HdrHistogram\2.1.12\HdrHistogram-2.1.12.jar;C:\Users\Mairon\.m2\repository\org\latencyutils\LatencyUtils\2.0.3\LatencyUtils-2.0.3.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-transport\4.1.96.Final\netty-transport-4.1.96.Final.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-common\4.1.96.Final\netty-common-4.1.96.Final.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-buffer\4.1.96.Final\netty-buffer-4.1.96.Final.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-resolver\4.1.96.Final\netty-resolver-4.1.96.Final.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-codec-haproxy\4.1.96.Final\netty-codec-haproxy-4.1.96.Final.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-codec\4.1.96.Final\netty-codec-4.1.96.Final.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-codec-http2\4.1.96.Final\netty-codec-http2-4.1.96.Final.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-handler\4.1.96.Final\netty-handler-4.1.96.Final.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-codec-http\4.1.96.Final\netty-codec-http-4.1.96.Final.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-resolver-dns\4.1.96.Final\netty-resolver-dns-4.1.96.Final.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-codec-dns\4.1.96.Final\netty-codec-dns-4.1.96.Final.jar;C:\Users\Mairon\.m2\repository\org\reactivestreams\reactive-streams\1.0.4\reactive-streams-1.0.4.jar;C:\Users\Mairon\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-handler-proxy\4.1.96.Final\netty-handler-proxy-4.1.96.Final.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-codec-socks\4.1.96.Final\netty-codec-socks-4.1.96.Final.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-transport-native-unix-common\4.1.96.Final\netty-transport-native-unix-common-4.1.96.Final-linux-x86_64.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-transport-native-epoll\4.1.96.Final\netty-transport-native-epoll-4.1.96.Final-linux-x86_64.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-transport-native-unix-common\4.1.96.Final\netty-transport-native-unix-common-4.1.96.Final.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-transport-classes-epoll\4.1.96.Final\netty-transport-classes-epoll-4.1.96.Final.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-transport-native-unix-common\4.1.96.Final\netty-transport-native-unix-common-4.1.96.Final-linux-aarch_64.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-transport-native-epoll\4.1.96.Final\netty-transport-native-epoll-4.1.96.Final-linux-aarch_64.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-transport-native-unix-common\4.1.96.Final\netty-transport-native-unix-common-4.1.96.Final-osx-x86_64.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-transport-native-kqueue\4.1.96.Final\netty-transport-native-kqueue-4.1.96.Final-osx-x86_64.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-transport-classes-kqueue\4.1.96.Final\netty-transport-classes-kqueue-4.1.96.Final.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-resolver-dns-native-macos\4.1.96.Final\netty-resolver-dns-native-macos-4.1.96.Final-osx-x86_64.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-resolver-dns-classes-macos\4.1.96.Final\netty-resolver-dns-classes-macos-4.1.96.Final.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-transport-native-unix-common\4.1.96.Final\netty-transport-native-unix-common-4.1.96.Final-osx-aarch_64.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-transport-native-kqueue\4.1.96.Final\netty-transport-native-kqueue-4.1.96.Final-osx-aarch_64.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-resolver-dns-native-macos\4.1.96.Final\netty-resolver-dns-native-macos-4.1.96.Final-osx-aarch_64.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-tcnative-boringssl-static\2.0.61.Final\netty-tcnative-boringssl-static-2.0.61.Final-linux-x86_64.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-tcnative-classes\2.0.61.Final\netty-tcnative-classes-2.0.61.Final.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-tcnative-boringssl-static\2.0.61.Final\netty-tcnative-boringssl-static-2.0.61.Final-linux-aarch_64.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-tcnative-boringssl-static\2.0.61.Final\netty-tcnative-boringssl-static-2.0.61.Final-osx-x86_64.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-tcnative-boringssl-static\2.0.61.Final\netty-tcnative-boringssl-static-2.0.61.Final-osx-aarch_64.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-tcnative-boringssl-static\2.0.61.Final\netty-tcnative-boringssl-static-2.0.61.Final-windows-x86_64.jar;C:\Users\Mairon\.m2\repository\com\aayushatharva\brotli4j\brotli4j\1.12.0\brotli4j-1.12.0.jar;C:\Users\Mairon\.m2\repository\com\aayushatharva\brotli4j\service\1.12.0\service-1.12.0.jar;C:\Users\Mairon\.m2\repository\com\aayushatharva\brotli4j\native-windows-x86_64\1.12.0\native-windows-x86_64-1.12.0.jar;C:\Users\Mairon\.m2\repository\org\apache\httpcomponents\httpclient\4.5.14\httpclient-4.5.14.jar;C:\Users\Mairon\.m2\repository\org\apache\httpcomponents\httpcore\4.4.16\httpcore-4.4.16.jar;C:\Users\Mairon\.m2\repository\commons-codec\commons-codec\1.16.0\commons-codec-1.16.0.jar;C:\Users\Mairon\.m2\repository\ch\qos\logback\logback-classic\1.4.11\logback-classic-1.4.11.jar;C:\Users\Mairon\.m2\repository\ch\qos\logback\logback-core\1.4.11\logback-core-1.4.11.jar;C:\Users\Mairon\.m2\repository\org\slf4j\jcl-over-slf4j\2.0.9\jcl-over-slf4j-2.0.9.jar;C:\Users\Mairon\.m2\repository\org\antlr\antlr4-runtime\4.11.1\antlr4-runtime-4.11.1.jar;C:\Users\Mairon\.m2\repository\com\jayway\jsonpath\json-path\2.8.0\json-path-2.8.0.jar;C:\Users\Mairon\.m2\repository\net\minidev\json-smart\2.4.10\json-smart-2.4.10.jar;C:\Users\Mairon\.m2\repository\net\minidev\accessors-smart\2.4.9\accessors-smart-2.4.9.jar;C:\Users\Mairon\.m2\repository\org\ow2\asm\asm\9.3\asm-9.3.jar;C:\Users\Mairon\.m2\repository\org\yaml\snakeyaml\2.0\snakeyaml-2.0.jar;C:\Users\Mairon\.m2\repository\de\siegmar\fastcsv\2.2.1\fastcsv-2.2.1.jar;C:\Users\Mairon\.m2\repository\info\picocli\picocli\4.7.1\picocli-4.7.1.jar;C:\Users\Mairon\.m2\repository\io\github\classgraph\classgraph\4.8.160\classgraph-4.8.160.jar;C:\Users\Mairon\.m2\repository\io\github\t12y\resemble\1.0.2\resemble-1.0.2.jar;C:\Users\Mairon\.m2\repository\io\github\t12y\ssim\1.0.0\ssim-1.0.0.jar;C:\Users\Mairon\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.3\junit-jupiter-api-5.9.3.jar;C:\Users\Mairon\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Mairon\.m2\repository\org\junit\platform\junit-platform-commons\1.9.3\junit-platform-commons-1.9.3.jar;C:\Users\Mairon\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Mairon\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.3\junit-jupiter-engine-5.9.3.jar;C:\Users\Mairon\.m2\repository\org\junit\platform\junit-platform-engine\1.9.3\junit-platform-engine-1.9.3.jar;"/>
+    <property name="java.vm.vendor" value="Eclipse Adoptium"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://adoptium.net/"/>
+    <property name="user.timezone" value="America/Bogota"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="MX"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-17.0.17.10-hotspot\bin"/>
+    <property name="sun.java.command" value="C:\Users\Mairon\AppData\Local\Temp\surefire3684490667464577430\surefirebooter-20251202153139800_3.jar C:\Users\Mairon\AppData\Local\Temp\surefire3684490667464577430 2025-12-02T15-31-39_637-jvmRun1 surefire-20251202153139800_1tmp surefire_0-20251202153139800_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Users\Mairon\Documents\Karate automation\technical_test\target\test-classes;C:\Users\Mairon\Documents\Karate automation\technical_test\target\classes;C:\Users\Mairon\.m2\repository\com\intuit\karate\karate-junit5\1.4.1\karate-junit5-1.4.1.jar;C:\Users\Mairon\.m2\repository\com\intuit\karate\karate-core\1.4.1\karate-core-1.4.1.jar;C:\Users\Mairon\.m2\repository\org\graalvm\js\js-scriptengine\22.3.3\js-scriptengine-22.3.3.jar;C:\Users\Mairon\.m2\repository\org\graalvm\sdk\graal-sdk\22.3.3\graal-sdk-22.3.3.jar;C:\Users\Mairon\.m2\repository\org\graalvm\js\js\22.3.3\js-22.3.3.jar;C:\Users\Mairon\.m2\repository\org\graalvm\regex\regex\22.3.3\regex-22.3.3.jar;C:\Users\Mairon\.m2\repository\org\graalvm\truffle\truffle-api\22.3.3\truffle-api-22.3.3.jar;C:\Users\Mairon\.m2\repository\com\ibm\icu\icu4j\71.1\icu4j-71.1.jar;C:\Users\Mairon\.m2\repository\org\thymeleaf\thymeleaf\3.1.2.RELEASE\thymeleaf-3.1.2.RELEASE.jar;C:\Users\Mairon\.m2\repository\ognl\ognl\3.3.4\ognl-3.3.4.jar;C:\Users\Mairon\.m2\repository\org\javassist\javassist\3.29.0-GA\javassist-3.29.0-GA.jar;C:\Users\Mairon\.m2\repository\org\attoparser\attoparser\2.0.7.RELEASE\attoparser-2.0.7.RELEASE.jar;C:\Users\Mairon\.m2\repository\org\unbescape\unbescape\1.1.6.RELEASE\unbescape-1.1.6.RELEASE.jar;C:\Users\Mairon\.m2\repository\org\slf4j\slf4j-api\2.0.7\slf4j-api-2.0.7.jar;C:\Users\Mairon\.m2\repository\com\linecorp\armeria\armeria\1.25.2\armeria-1.25.2.jar;C:\Users\Mairon\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.15.2\jackson-core-2.15.2.jar;C:\Users\Mairon\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.15.2\jackson-annotations-2.15.2.jar;C:\Users\Mairon\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.15.2\jackson-databind-2.15.2.jar;C:\Users\Mairon\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.15.2\jackson-datatype-jdk8-2.15.2.jar;C:\Users\Mairon\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.15.2\jackson-datatype-jsr310-2.15.2.jar;C:\Users\Mairon\.m2\repository\io\micrometer\micrometer-core\1.11.3\micrometer-core-1.11.3.jar;C:\Users\Mairon\.m2\repository\io\micrometer\micrometer-commons\1.11.3\micrometer-commons-1.11.3.jar;C:\Users\Mairon\.m2\repository\io\micrometer\micrometer-observation\1.11.3\micrometer-observation-1.11.3.jar;C:\Users\Mairon\.m2\repository\org\hdrhistogram\HdrHistogram\2.1.12\HdrHistogram-2.1.12.jar;C:\Users\Mairon\.m2\repository\org\latencyutils\LatencyUtils\2.0.3\LatencyUtils-2.0.3.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-transport\4.1.96.Final\netty-transport-4.1.96.Final.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-common\4.1.96.Final\netty-common-4.1.96.Final.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-buffer\4.1.96.Final\netty-buffer-4.1.96.Final.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-resolver\4.1.96.Final\netty-resolver-4.1.96.Final.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-codec-haproxy\4.1.96.Final\netty-codec-haproxy-4.1.96.Final.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-codec\4.1.96.Final\netty-codec-4.1.96.Final.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-codec-http2\4.1.96.Final\netty-codec-http2-4.1.96.Final.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-handler\4.1.96.Final\netty-handler-4.1.96.Final.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-codec-http\4.1.96.Final\netty-codec-http-4.1.96.Final.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-resolver-dns\4.1.96.Final\netty-resolver-dns-4.1.96.Final.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-codec-dns\4.1.96.Final\netty-codec-dns-4.1.96.Final.jar;C:\Users\Mairon\.m2\repository\org\reactivestreams\reactive-streams\1.0.4\reactive-streams-1.0.4.jar;C:\Users\Mairon\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-handler-proxy\4.1.96.Final\netty-handler-proxy-4.1.96.Final.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-codec-socks\4.1.96.Final\netty-codec-socks-4.1.96.Final.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-transport-native-unix-common\4.1.96.Final\netty-transport-native-unix-common-4.1.96.Final-linux-x86_64.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-transport-native-epoll\4.1.96.Final\netty-transport-native-epoll-4.1.96.Final-linux-x86_64.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-transport-native-unix-common\4.1.96.Final\netty-transport-native-unix-common-4.1.96.Final.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-transport-classes-epoll\4.1.96.Final\netty-transport-classes-epoll-4.1.96.Final.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-transport-native-unix-common\4.1.96.Final\netty-transport-native-unix-common-4.1.96.Final-linux-aarch_64.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-transport-native-epoll\4.1.96.Final\netty-transport-native-epoll-4.1.96.Final-linux-aarch_64.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-transport-native-unix-common\4.1.96.Final\netty-transport-native-unix-common-4.1.96.Final-osx-x86_64.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-transport-native-kqueue\4.1.96.Final\netty-transport-native-kqueue-4.1.96.Final-osx-x86_64.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-transport-classes-kqueue\4.1.96.Final\netty-transport-classes-kqueue-4.1.96.Final.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-resolver-dns-native-macos\4.1.96.Final\netty-resolver-dns-native-macos-4.1.96.Final-osx-x86_64.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-resolver-dns-classes-macos\4.1.96.Final\netty-resolver-dns-classes-macos-4.1.96.Final.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-transport-native-unix-common\4.1.96.Final\netty-transport-native-unix-common-4.1.96.Final-osx-aarch_64.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-transport-native-kqueue\4.1.96.Final\netty-transport-native-kqueue-4.1.96.Final-osx-aarch_64.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-resolver-dns-native-macos\4.1.96.Final\netty-resolver-dns-native-macos-4.1.96.Final-osx-aarch_64.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-tcnative-boringssl-static\2.0.61.Final\netty-tcnative-boringssl-static-2.0.61.Final-linux-x86_64.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-tcnative-classes\2.0.61.Final\netty-tcnative-classes-2.0.61.Final.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-tcnative-boringssl-static\2.0.61.Final\netty-tcnative-boringssl-static-2.0.61.Final-linux-aarch_64.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-tcnative-boringssl-static\2.0.61.Final\netty-tcnative-boringssl-static-2.0.61.Final-osx-x86_64.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-tcnative-boringssl-static\2.0.61.Final\netty-tcnative-boringssl-static-2.0.61.Final-osx-aarch_64.jar;C:\Users\Mairon\.m2\repository\io\netty\netty-tcnative-boringssl-static\2.0.61.Final\netty-tcnative-boringssl-static-2.0.61.Final-windows-x86_64.jar;C:\Users\Mairon\.m2\repository\com\aayushatharva\brotli4j\brotli4j\1.12.0\brotli4j-1.12.0.jar;C:\Users\Mairon\.m2\repository\com\aayushatharva\brotli4j\service\1.12.0\service-1.12.0.jar;C:\Users\Mairon\.m2\repository\com\aayushatharva\brotli4j\native-windows-x86_64\1.12.0\native-windows-x86_64-1.12.0.jar;C:\Users\Mairon\.m2\repository\org\apache\httpcomponents\httpclient\4.5.14\httpclient-4.5.14.jar;C:\Users\Mairon\.m2\repository\org\apache\httpcomponents\httpcore\4.4.16\httpcore-4.4.16.jar;C:\Users\Mairon\.m2\repository\commons-codec\commons-codec\1.16.0\commons-codec-1.16.0.jar;C:\Users\Mairon\.m2\repository\ch\qos\logback\logback-classic\1.4.11\logback-classic-1.4.11.jar;C:\Users\Mairon\.m2\repository\ch\qos\logback\logback-core\1.4.11\logback-core-1.4.11.jar;C:\Users\Mairon\.m2\repository\org\slf4j\jcl-over-slf4j\2.0.9\jcl-over-slf4j-2.0.9.jar;C:\Users\Mairon\.m2\repository\org\antlr\antlr4-runtime\4.11.1\antlr4-runtime-4.11.1.jar;C:\Users\Mairon\.m2\repository\com\jayway\jsonpath\json-path\2.8.0\json-path-2.8.0.jar;C:\Users\Mairon\.m2\repository\net\minidev\json-smart\2.4.10\json-smart-2.4.10.jar;C:\Users\Mairon\.m2\repository\net\minidev\accessors-smart\2.4.9\accessors-smart-2.4.9.jar;C:\Users\Mairon\.m2\repository\org\ow2\asm\asm\9.3\asm-9.3.jar;C:\Users\Mairon\.m2\repository\org\yaml\snakeyaml\2.0\snakeyaml-2.0.jar;C:\Users\Mairon\.m2\repository\de\siegmar\fastcsv\2.2.1\fastcsv-2.2.1.jar;C:\Users\Mairon\.m2\repository\info\picocli\picocli\4.7.1\picocli-4.7.1.jar;C:\Users\Mairon\.m2\repository\io\github\classgraph\classgraph\4.8.160\classgraph-4.8.160.jar;C:\Users\Mairon\.m2\repository\io\github\t12y\resemble\1.0.2\resemble-1.0.2.jar;C:\Users\Mairon\.m2\repository\io\github\t12y\ssim\1.0.0\ssim-1.0.0.jar;C:\Users\Mairon\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.3\junit-jupiter-api-5.9.3.jar;C:\Users\Mairon\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Mairon\.m2\repository\org\junit\platform\junit-platform-commons\1.9.3\junit-platform-commons-1.9.3.jar;C:\Users\Mairon\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Mairon\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.3\junit-jupiter-engine-5.9.3.jar;C:\Users\Mairon\.m2\repository\org\junit\platform\junit-platform-engine\1.9.3\junit-platform-engine-1.9.3.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\Mairon"/>
+    <property name="user.language" value="es"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2025-10-21"/>
+    <property name="java.home" value="C:\Program Files\Eclipse Adoptium\jdk-17.0.17.10-hotspot"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\Mairon\Documents\Karate automation\technical_test"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\Mairon\AppData\Local\Temp\surefire3684490667464577430\surefirebooter-20251202153139800_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="17.0.17+10"/>
+    <property name="user.name" value="Mairon"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Temurin-17.0.17+10"/>
+    <property name="localRepository" value="C:\Users\Mairon\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
+    <property name="java.io.tmpdir" value="C:\Users\Mairon\AppData\Local\Temp\"/>
+    <property name="java.version" value="17.0.17"/>
+    <property name="user.dir" value="C:\Users\Mairon\Documents\Karate automation\technical_test"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-17.0.17.10-hotspot\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Eclipse Adoptium\jdk-17.0.17.10-hotspot\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\python313;C:\python313\Scripts;C:\python313\DLLs;C:\python313\Lib;C:\python313\libs;C:\Users\Mairon\Documents\Python 3.13.1\SeleniumWDTTutorial\drivers\libs;C:\Program Files\Calibre2\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\Mairon\AppData\Local\Microsoft\WindowsApps;C:\Users\Mairon\AppData\Roaming\npm;C:\Users\Mairon\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Mairon\Downloads\MaVEN\apache-maven-3.9.11-bin\apache-maven-3.9.11\bin;c:\Users\Mairon\.vscode\extensions\vscjava.vscode-java-debug-0.58.3\bundled\scripts\noConfigScripts;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Eclipse Adoptium"/>
+    <property name="java.vm.version" value="17.0.17+10"/>
+    <property name="java.specification.maintenance.version" value="1"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="61.0"/>
+  </properties>
+  <testcase name="[1:7] Login with valid credentials" classname="examples/auth/auth" time="1.676">
+    <system-out><![CDATA[15:31:41.014 [main] DEBUG com.intuit.karate.Suite - [config] classpath:karate-config.js
+15:31:41.822 [main] INFO  com.intuit.karate - karate.env system property was: null 
+15:31:42.122 [main] DEBUG com.intuit.karate - request:
+1 > POST https://fakestoreapi.com/auth/login
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 41
+1 > Host: fakestoreapi.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.17)
+1 > Accept-Encoding: gzip,deflate
+{"username":"johnd","password":"m38rmF$"}
+
+15:31:42.714 [main] DEBUG com.intuit.karate - response time in milliseconds: 588
+1 < 201
+1 < Date: Tue, 02 Dec 2025 20:31:42 GMT
+1 < Content-Type: application/json; charset=utf-8
+1 < Content-Length: 148
+1 < Connection: keep-alive
+1 < access-control-allow-origin: *
+1 < etag: W/"94-0cflH4sPArWujtDa8iUgF6aqa0g"
+1 < x-powered-by: Express
+1 < cf-cache-status: DYNAMIC
+1 < Nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+1 < Server-Timing: cfCacheStatus;desc="DYNAMIC"
+1 < Server-Timing: cfEdge;dur=5,cfOrigin;dur=225
+1 < Report-To: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=rfnc%2FzLR7aOTxXCtqTpbiuUQarrebHmAHSvRm5yR4AibPr6v2%2Bb6P9%2BFbXpY6xOna9RIDz0GhyyO9WI%2B4EHc%2BYs%2Bdy4M6fxa4qCDpjmte2o%3D"}]}
+1 < Server: cloudflare
+1 < CF-RAY: 9a7d96e4398c99b9-MIA
+1 < alt-svc: h3=":443"; ma=86400
+{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXIiOiJqb2huZCIsImlhdCI6MTc2NDcwNzUwMn0.UfLaeHo2u3eBVyLKsvzLq2k1dZZOiACAwQufGj9Q1Z8"}
+
+15:31:42.725 [main] INFO  com.intuit.karate - [print] {
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXIiOiJqb2huZCIsImlhdCI6MTc2NDcwNzUwMn0.UfLaeHo2u3eBVyLKsvzLq2k1dZZOiACAwQufGj9Q1Z8"
+}
+ 
+]]></system-out>
+  </testcase>
+  <testcase name="[2:18] validate response time" classname="examples/auth/auth" time="0.461">
+    <system-out><![CDATA[15:31:42.737 [main] INFO  com.intuit.karate - karate.env system property was: null 
+15:31:42.741 [main] DEBUG com.intuit.karate - request:
+1 > POST https://fakestoreapi.com/auth/login
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 41
+1 > Host: fakestoreapi.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.17)
+1 > Accept-Encoding: gzip,deflate
+{"username":"johnd","password":"m38rmF$"}
+
+15:31:43.186 [main] DEBUG com.intuit.karate - response time in milliseconds: 445
+1 < 201
+1 < Date: Tue, 02 Dec 2025 20:31:43 GMT
+1 < Content-Type: application/json; charset=utf-8
+1 < Content-Length: 148
+1 < Connection: keep-alive
+1 < access-control-allow-origin: *
+1 < etag: W/"94-qUTSZuUDjnS7eGQLg5gUqAknQzQ"
+1 < x-powered-by: Express
+1 < cf-cache-status: DYNAMIC
+1 < Nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+1 < Server-Timing: cfCacheStatus;desc="DYNAMIC"
+1 < Server-Timing: cfEdge;dur=5,cfOrigin;dur=227
+1 < Report-To: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=0tg369YI3KFfOBv0mdAYiwgPeJ%2BFP0Us0vtP%2Fiq4mSes1e0IKeHFCrm4W0Zjm%2FYzk9MEGkBLJuULTPLgn1Erfhri%2FlRACcaHTk3tUr%2FsJ8I%3D"}]}
+1 < Server: cloudflare
+1 < CF-RAY: 9a7d96e73ad6c9e6-MIA
+1 < alt-svc: h3=":443"; ma=86400
+{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXIiOiJqb2huZCIsImlhdCI6MTc2NDcwNzUwM30.p0gP6D_jQ12yTYOVyo_oTdXuHmIAJPYJBAheMjKGoMw"}
+
+15:31:43.190 [main] INFO  com.intuit.karate - [print] {
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXIiOiJqb2huZCIsImlhdCI6MTc2NDcwNzUwM30.p0gP6D_jQ12yTYOVyo_oTdXuHmIAJPYJBAheMjKGoMw"
+}
+ 
+]]></system-out>
+  </testcase>
+  <testcase name="[3:27] validate token not empty" classname="examples/auth/auth" time="0.445">
+    <system-out><![CDATA[15:31:43.197 [main] INFO  com.intuit.karate - karate.env system property was: null 
+15:31:43.200 [main] DEBUG com.intuit.karate - request:
+1 > POST https://fakestoreapi.com/auth/login
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 41
+1 > Host: fakestoreapi.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.17)
+1 > Accept-Encoding: gzip,deflate
+{"username":"johnd","password":"m38rmF$"}
+
+15:31:43.634 [main] DEBUG com.intuit.karate - response time in milliseconds: 433
+1 < 201
+1 < Date: Tue, 02 Dec 2025 20:31:43 GMT
+1 < Content-Type: application/json; charset=utf-8
+1 < Content-Length: 148
+1 < Connection: keep-alive
+1 < access-control-allow-origin: *
+1 < etag: W/"94-qUTSZuUDjnS7eGQLg5gUqAknQzQ"
+1 < x-powered-by: Express
+1 < cf-cache-status: DYNAMIC
+1 < Nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+1 < Server-Timing: cfCacheStatus;desc="DYNAMIC"
+1 < Server-Timing: cfEdge;dur=5,cfOrigin;dur=224
+1 < Report-To: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=clYeM%2BSpcdn2DumPut4fF0MWzVQC79YrUL75cmPNURVVwxPYto7MOAzxF2rNqY1FFTnakq82iuLYszxEnnOqS0wKVtAx7ltU3IqEKeXYkqk%3D"}]}
+1 < Server: cloudflare
+1 < CF-RAY: 9a7d96ea088cf498-MIA
+1 < alt-svc: h3=":443"; ma=86400
+{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXIiOiJqb2huZCIsImlhdCI6MTc2NDcwNzUwM30.p0gP6D_jQ12yTYOVyo_oTdXuHmIAJPYJBAheMjKGoMw"}
+
+15:31:43.637 [main] INFO  com.intuit.karate - [print] {
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsInVzZXIiOiJqb2huZCIsImlhdCI6MTc2NDcwNzUwM30.p0gP6D_jQ12yTYOVyo_oTdXuHmIAJPYJBAheMjKGoMw"
+}
+ 
+]]></system-out>
+  </testcase>
+  <testcase name="[4:40] Login with non-existent user" classname="examples/auth/auth" time="0.454">
+    <system-out><![CDATA[15:31:43.643 [main] INFO  com.intuit.karate - karate.env system property was: null 
+15:31:43.646 [main] DEBUG com.intuit.karate - request:
+1 > POST https://fakestoreapi.com/auth/login
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 46
+1 > Host: fakestoreapi.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.17)
+1 > Accept-Encoding: gzip,deflate
+{"username":"invalido","password":"invalido!"}
+
+15:31:44.089 [main] DEBUG com.intuit.karate - response time in milliseconds: 443
+1 < 401
+1 < Date: Tue, 02 Dec 2025 20:31:44 GMT
+1 < Content-Type: text/html; charset=utf-8
+1 < Content-Length: 33
+1 < Connection: keep-alive
+1 < access-control-allow-origin: *
+1 < etag: W/"21-kqEUlF5d6RRpf3XO8rj97canyAM"
+1 < x-powered-by: Express
+1 < cf-cache-status: DYNAMIC
+1 < Nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+1 < Server-Timing: cfCacheStatus;desc="DYNAMIC"
+1 < Server-Timing: cfEdge;dur=6,cfOrigin;dur=229
+1 < Report-To: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=uwLdlEUBQFLfi4C0ON%2B5edU7zw%2BUpAkey3Grj9v6Flp%2Fw4dgKdW7HzamTDouD7RVGto8Pp%2Fk7G09ph%2F26Jbk7pg20SmvCpO5NOTRIZEcyBQ%3D"}]}
+1 < Server: cloudflare
+1 < CF-RAY: 9a7d96ecdd9be55c-MIA
+1 < alt-svc: h3=":443"; ma=86400
+username or password is incorrect
+
+15:31:44.091 [main] INFO  com.intuit.karate - [print] username or password is incorrect 
+]]></system-out>
+  </testcase>
+  <testcase name="[5:48] Login with a invalid password" classname="examples/auth/auth" time="0.43">
+    <system-out><![CDATA[15:31:44.097 [main] INFO  com.intuit.karate - karate.env system property was: null 
+15:31:44.100 [main] DEBUG com.intuit.karate - request:
+1 > POST https://fakestoreapi.com/auth/login
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 43
+1 > Host: fakestoreapi.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.17)
+1 > Accept-Encoding: gzip,deflate
+{"username":"johnd","password":"invalido!"}
+
+15:31:44.521 [main] DEBUG com.intuit.karate - response time in milliseconds: 420
+1 < 401
+1 < Date: Tue, 02 Dec 2025 20:31:44 GMT
+1 < Content-Type: text/html; charset=utf-8
+1 < Content-Length: 33
+1 < Connection: keep-alive
+1 < access-control-allow-origin: *
+1 < etag: W/"21-kqEUlF5d6RRpf3XO8rj97canyAM"
+1 < x-powered-by: Express
+1 < cf-cache-status: DYNAMIC
+1 < Nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+1 < Server-Timing: cfCacheStatus;desc="DYNAMIC"
+1 < Server-Timing: cfEdge;dur=5,cfOrigin;dur=227
+1 < Report-To: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=ycgYnJgCKNX80qGG1fHXfV3cqZDhWONung6gnLw3Mp7YxQ4lwmErYjtCM2P7FDQyND0bhirUx%2BOFvGR9nLyi2ibaL9%2B%2Bg108EhySeCBXwAM%3D"}]}
+1 < Server: cloudflare
+1 < CF-RAY: 9a7d96ef9fc59471-MIA
+1 < alt-svc: h3=":443"; ma=86400
+username or password is incorrect
+
+15:31:44.522 [main] INFO  com.intuit.karate - [print] username or password is incorrect 
+]]></system-out>
+  </testcase>
+  <testcase name="[6:57] Login without data" classname="examples/auth/auth" time="0.332">
+    <system-out><![CDATA[15:31:44.528 [main] INFO  com.intuit.karate - karate.env system property was: null 
+15:31:44.530 [main] DEBUG com.intuit.karate - request:
+1 > POST https://fakestoreapi.com/auth/login
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 2
+1 > Host: fakestoreapi.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.17)
+1 > Accept-Encoding: gzip,deflate
+{}
+
+15:31:44.854 [main] DEBUG com.intuit.karate - response time in milliseconds: 323
+1 < 400
+1 < Date: Tue, 02 Dec 2025 20:31:45 GMT
+1 < Content-Type: text/html; charset=utf-8
+1 < Content-Length: 53
+1 < Connection: keep-alive
+1 < access-control-allow-origin: *
+1 < etag: W/"35-rdWdMc+5t+Ebsw3LCVarsmPsFiQ"
+1 < x-powered-by: Express
+1 < cf-cache-status: DYNAMIC
+1 < Nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+1 < Server-Timing: cfCacheStatus;desc="DYNAMIC"
+1 < Server-Timing: cfEdge;dur=5,cfOrigin;dur=124
+1 < Report-To: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=vyXc5AVvPneaaTamxWjXjj4evdlyKTCPbT%2Bq5woHtB0UTF18YCewfk8zvvRk4YknzReuyR%2BPgjIjRATFtUg2I1C8k1X2mjd4MxCit2s7G2s%3D"}]}
+1 < Server: cloudflare
+1 < CF-RAY: 9a7d96f24af4c594-MIA
+1 < alt-svc: h3=":443"; ma=86400
+username and password are not provided in JSON format
+
+15:31:44.855 [main] INFO  com.intuit.karate - [print] username and password are not provided in JSON format 
+]]></system-out>
+  </testcase>
+  <testcase name="[7:65] Validate bad JSON body" classname="examples/auth/auth" time="1.043">
+    <system-out><![CDATA[15:31:44.861 [main] INFO  com.intuit.karate - karate.env system property was: null 
+15:31:44.864 [main] DEBUG com.intuit.karate - request:
+1 > POST https://fakestoreapi.com/auth/login
+1 > Content-Type: application/json; charset=UTF-8
+1 > Content-Length: 44
+1 > Host: fakestoreapi.com
+1 > Connection: Keep-Alive
+1 > User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.17)
+1 > Accept-Encoding: gzip,deflate
+{ "username": "johnd", "password": m38rmF$ }
+
+15:31:45.176 [main] DEBUG com.intuit.karate - response time in milliseconds: 312
+1 < 400
+1 < Date: Tue, 02 Dec 2025 20:31:45 GMT
+1 < Content-Type: text/html; charset=utf-8
+1 < Transfer-Encoding: chunked
+1 < Connection: keep-alive
+1 < access-control-allow-origin: *
+1 < content-security-policy: default-src 'none'
+1 < x-content-type-options: nosniff
+1 < x-powered-by: Express
+1 < cf-cache-status: DYNAMIC
+1 < Nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+1 < Server-Timing: cfCacheStatus;desc="DYNAMIC"
+1 < Server-Timing: cfEdge;dur=4,cfOrigin;dur=123
+1 < Report-To: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=%2FnhcCdeyL7HDhNYtVxJSpOHnhpaWl7MoM%2FOh%2B3%2FtJiktnFhwWuYVNbBwQ%2FcB3ers7BStB7epsUtGMoYeGAZDL%2Bql2AUT0dXWWsRGyP0RTaY%3D"}]}
+1 < Server: cloudflare
+1 < CF-RAY: 9a7d96f45fcc341d-MIA
+1 < alt-svc: h3=":443"; ma=86400
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Error</title>
+</head>
+<body>
+<pre>Bad Request</pre>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9a7d96f45fcc341d',t:'MTc2NDcwNzUwNQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"329b29d772ea4dc784f67579bb41165d","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+15:31:45.178 [main] INFO  com.intuit.karate - [print] <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Error</title>
+</head>
+<body>
+<pre>Bad Request</pre>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9a7d96f45fcc341d',t:'MTc2NDcwNzUwNQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"329b29d772ea4dc784f67579bb41165d","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
+ 
+---------------------------------------------------------
+feature: classpath:examples/auth/auth.feature
+scenarios:  7 | passed:  7 | failed:  0 | time: 3.2838
+---------------------------------------------------------
+
+Karate version: 1.4.1
+======================================================
+elapsed:   4.87 | threads:    1 | thread time: 3.28 
+features:     1 | skipped:    0 | efficiency: 0.67
+scenarios:    7 | passed:     7 | failed: 0
+======================================================
+
+HTML report: (paste into browser to view) | Karate version: 1.4.1
+file:///C:/Users/Mairon/Documents/Karate%20automation/technical_test/target/karate-reports/karate-summary.html
+===================================================================
+
+]]></system-out>
+  </testcase>
+</testsuite>

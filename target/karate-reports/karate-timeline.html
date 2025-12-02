@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"examples\/users\/users[1:8]","start":1764707525724,"end":1764707526157,"title":"examples\/users\/users[1:8] 15:32:05.724-15:32:06.157 get all users"},{"id":2,"group":1,"content":"examples\/users\/users[2:14]","start":1764707526161,"end":1764707526602,"title":"examples\/users\/users[2:14] 15:32:06.161-15:32:06.602 get an user by id"},{"id":3,"group":1,"content":"examples\/users\/users[3:20]","start":1764707526605,"end":1764707527040,"title":"examples\/users\/users[3:20] 15:32:06.605-15:32:07.040 validate data type"},{"id":4,"group":1,"content":"examples\/users\/users[4:27]","start":1764707527043,"end":1764707527895,"title":"examples\/users\/users[4:27] 15:32:07.043-15:32:07.895 Create a new user and valide creation"},{"id":5,"group":1,"content":"examples\/users\/users[5:45]","start":1764707527898,"end":1764707528231,"title":"examples\/users\/users[5:45] 15:32:07.898-15:32:08.231 Edit a existent user."},{"id":6,"group":1,"content":"examples\/users\/users[6:55]","start":1764707528234,"end":1764707528667,"title":"examples\/users\/users[6:55] 15:32:08.234-15:32:08.667 Delete users"},{"id":7,"group":1,"content":"examples\/users\/users[7:63]","start":1764707528670,"end":1764707529102,"title":"examples\/users\/users[7:63] 15:32:08.670-15:32:09.102 Get a id user non-existent","className":"failed"},{"id":8,"group":1,"content":"examples\/users\/users[8:69]","start":1764707529106,"end":1764707529724,"title":"examples\/users\/users[8:69] 15:32:09.106-15:32:09.724 Create new user with missing data","className":"failed"},{"id":9,"group":1,"content":"examples\/users\/users[9:80]","start":1764707529728,"end":1764707530156,"title":"examples\/users\/users[9:80] 15:32:09.728-15:32:10.156 Create new user with an username already created (\"johnd\" by user with id \"1\")","className":"failed"},{"id":10,"group":1,"content":"examples\/users\/users[10:91]","start":1764707530159,"end":1764707530596,"title":"examples\/users\/users[10:91] 15:32:10.159-15:32:10.596 Create a user with a password that has low validation requirements","className":"failed"},{"id":11,"group":1,"content":"examples\/users\/users[11:103]","start":1764707530600,"end":1764707531024,"title":"examples\/users\/users[11:103] 15:32:10.600-15:32:11.024 try to create a user without password","className":"failed"},{"id":12,"group":1,"content":"examples\/users\/users[12:115]","start":1764707531028,"end":1764707531467,"title":"examples\/users\/users[12:115] 15:32:11.028-15:32:11.467 Try deleted a user non-existent","className":"failed"},{"id":13,"group":1,"content":"examples\/users\/users[13:121]","start":1764707531471,"end":1764707531905,"title":"examples\/users\/users[13:121] 15:32:11.471-15:32:11.905 try to change id of a user already created","className":"failed"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

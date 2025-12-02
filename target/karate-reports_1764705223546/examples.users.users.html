@@ -1,0 +1,3954 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="stylesheet" href="res/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="res/karate-report.css" type="text/css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <script type="text/javascript" src="res/jquery.min.js"></script>
+    <script type="text/javascript" src="res/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="res/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="res/bootstrap.min.js"></script>
+    <script type="text/javascript" src="res/karate-report.js"></script>
+    <script type="text/javascript" src="res/Resemble.js"></script>
+    <script>
+!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
+  api_host:'https://app.posthog.com',
+  persistence:'localStorage',
+  autocapture:false,
+  capture_pageview:false,
+  api_transport:'sendBeacon',
+  loaded: function(posthog) { 
+    posthog.capture("report_feature",{distinct_id:"ff60b1c5-4bda-48a4-a199-c14f9777ecfd",karate_version:"1.4.1",karate_meta:null});
+  }
+});
+</script>
+
+    <title>examples.users.users</title>
+  </head>
+  <body>
+    <div id="root-container">
+      <div id="leftnav">
+        
+        <div>
+  <div class="nav-logo">
+    <a href="https://karatelabs.io">
+      <img src="karate-labs-logo-ring.svg" alt="Karate Labs"/>
+    </a>
+    <div class="nav-count">
+      <div id="nav-pass" class="bg-success">6</div>
+      <div id="nav-fail" class="bg-danger">7</div>
+    </div>
+  </div>
+  <div id="nav-env">
+    <div></div>
+  </div>
+  <div id="nav-type">
+    <div>Scenarios</div>
+  </div>
+  <div id="nav-date">
+    <div>2025-12-02 02:13:50 p. m.</div>
+  </div>
+</div>
+
+        <div class="nav-container">
+          <div class="nav-item passed">
+            <a href="#[1:8]"><span>[1:8]</span> <span>get all users</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[2:14]"><span>[2:14]</span> <span>get an user by id</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[3:20]"><span>[3:20]</span> <span>validate data type</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[4:27]"><span>[4:27]</span> <span>Create a new user and valide creation</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[5:45]"><span>[5:45]</span> <span>Edit a existent user.</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[6:55]"><span>[6:55]</span> <span>Delete users</span></a>
+          </div>
+          <div class="nav-item failed">
+            <a href="#[7:63]"><span>[7:63]</span> <span>Get a id user non-existent</span></a>
+          </div>
+          <div class="nav-item failed">
+            <a href="#[8:69]"><span>[8:69]</span> <span>Create new user with missing data</span></a>
+          </div>
+          <div class="nav-item failed">
+            <a href="#[9:80]"><span>[9:80]</span> <span>Create new user with an username already created (&quot;johnd&quot; by user with id &quot;1&quot;)</span></a>
+          </div>
+          <div class="nav-item failed">
+            <a href="#[10:91]"><span>[10:91]</span> <span>Create a user with a password that has low validation requirements</span></a>
+          </div>
+          <div class="nav-item failed">
+            <a href="#[11:103]"><span>[11:103]</span> <span>try to create a user without password</span></a>
+          </div>
+          <div class="nav-item failed">
+            <a href="#[12:115]"><span>[12:115]</span> <span>Try deleted a user non-existent</span></a>
+          </div>
+          <div class="nav-item failed">
+            <a href="#[13:121]"><span>[13:121]</span> <span>try to change id of a user already created</span></a>
+          </div>
+        </div>
+      </div>
+      <div id="content">
+        <div class="page-heading alert alert-primary">
+          <a href="karate-summary.html">Summary</a><span class="feature-label">|</span>
+          <a href="karate-tags.html">Tags</a><span class="feature-label">|</span>
+          <span class="feature-label">Feature:</span>
+          <span class="feature-path">examples/users/users.feature</span><span class="feature-label">|</span>
+          <span class="feature-name">Testing with Users Endpoint.</span>
+          <span class="feature-description"></span>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[1:8]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[1:8]</span>
+                <span class="scenario-name">get all users</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>444</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[1:8]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[1:8]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;https://fakestoreapi.com&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.4">14:13:47.999 karate.env system property was: null 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.9">
+      <div class="step-ref passed">9</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;users&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.10">
+      <div class="step-ref passed">10</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method get</span>
+      </div>
+    </div>
+    <div class="time-cell passed">442</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.10">14:13:48.001 request:
+1 &gt; GET https://fakestoreapi.com/users
+1 &gt; Host: fakestoreapi.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.17)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+14:13:48.441 response time in milliseconds: 440
+1 &lt; 200
+1 &lt; Date: Tue, 02 Dec 2025 19:13:48 GMT
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; access-control-allow-origin: *
+1 &lt; etag: W/&quot;bae-Vi0JNVg0EAD6LcGk4v18ASK0bgA&quot;
+1 &lt; x-powered-by: Express
+1 &lt; cf-cache-status: DYNAMIC
+1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
+1 &lt; Server-Timing: cfCacheStatus;desc=&quot;DYNAMIC&quot;
+1 &lt; Server-Timing: cfEdge;dur=5,cfOrigin;dur=227
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=4Hqj7BRex1lWUdVoaN7GQ2OIIoz0hpFTCfv2EG%2F%2BEpXDHc5fUjwGQZ8VYZhjneiJq86st7ZcY%2B5s%2BhhP9Q7i4pDjDq4ZBy3bXoCIZf0CJZA%3D&quot;}]}
+1 &lt; Server: cloudflare
+1 &lt; CF-RAY: 9a7d24c57acda662-MIA
+1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+[{&quot;address&quot;:{&quot;geolocation&quot;:{&quot;lat&quot;:&quot;-37.3159&quot;,&quot;long&quot;:&quot;81.1496&quot;},&quot;city&quot;:&quot;kilcoole&quot;,&quot;street&quot;:&quot;new road&quot;,&quot;number&quot;:7682,&quot;zipcode&quot;:&quot;12926-3874&quot;},&quot;id&quot;:1,&quot;email&quot;:&quot;john@gmail.com&quot;,&quot;username&quot;:&quot;johnd&quot;,&quot;password&quot;:&quot;m38rmF$&quot;,&quot;name&quot;:{&quot;firstname&quot;:&quot;john&quot;,&quot;lastname&quot;:&quot;doe&quot;},&quot;phone&quot;:&quot;1-570-236-7033&quot;,&quot;__v&quot;:0},{&quot;address&quot;:{&quot;geolocation&quot;:{&quot;lat&quot;:&quot;-37.3159&quot;,&quot;long&quot;:&quot;81.1496&quot;},&quot;city&quot;:&quot;kilcoole&quot;,&quot;street&quot;:&quot;Lovers Ln&quot;,&quot;number&quot;:7267,&quot;zipcode&quot;:&quot;12926-3874&quot;},&quot;id&quot;:2,&quot;email&quot;:&quot;morrison@gmail.com&quot;,&quot;username&quot;:&quot;mor_2314&quot;,&quot;password&quot;:&quot;83r5^_&quot;,&quot;name&quot;:{&quot;firstname&quot;:&quot;david&quot;,&quot;lastname&quot;:&quot;morrison&quot;},&quot;phone&quot;:&quot;1-570-236-7033&quot;,&quot;__v&quot;:0},{&quot;address&quot;:{&quot;geolocation&quot;:{&quot;lat&quot;:&quot;40.3467&quot;,&quot;long&quot;:&quot;-30.1310&quot;},&quot;city&quot;:&quot;Cullman&quot;,&quot;street&quot;:&quot;Frances Ct&quot;,&quot;number&quot;:86,&quot;zipcode&quot;:&quot;29567-1452&quot;},&quot;id&quot;:3,&quot;email&quot;:&quot;kevin@gmail.com&quot;,&quot;username&quot;:&quot;kevinryan&quot;,&quot;password&quot;:&quot;kev02937@&quot;,&quot;name&quot;:{&quot;firstname&quot;:&quot;kevin&quot;,&quot;lastname&quot;:&quot;ryan&quot;},&quot;phone&quot;:&quot;1-567-094-1345&quot;,&quot;__v&quot;:0},{&quot;address&quot;:{&quot;geolocation&quot;:{&quot;lat&quot;:&quot;50.3467&quot;,&quot;long&quot;:&quot;-20.1310&quot;},&quot;city&quot;:&quot;San Antonio&quot;,&quot;street&quot;:&quot;Hunters Creek Dr&quot;,&quot;number&quot;:6454,&quot;zipcode&quot;:&quot;98234-1734&quot;},&quot;id&quot;:4,&quot;email&quot;:&quot;don@gmail.com&quot;,&quot;username&quot;:&quot;donero&quot;,&quot;password&quot;:&quot;ewedon&quot;,&quot;name&quot;:{&quot;firstname&quot;:&quot;don&quot;,&quot;lastname&quot;:&quot;romer&quot;},&quot;phone&quot;:&quot;1-765-789-6734&quot;,&quot;__v&quot;:0},{&quot;address&quot;:{&quot;geolocation&quot;:{&quot;lat&quot;:&quot;40.3467&quot;,&quot;long&quot;:&quot;-40.1310&quot;},&quot;city&quot;:&quot;san Antonio&quot;,&quot;street&quot;:&quot;adams St&quot;,&quot;number&quot;:245,&quot;zipcode&quot;:&quot;80796-1234&quot;},&quot;id&quot;:5,&quot;email&quot;:&quot;derek@gmail.com&quot;,&quot;username&quot;:&quot;derek&quot;,&quot;password&quot;:&quot;jklg*_56&quot;,&quot;name&quot;:{&quot;firstname&quot;:&quot;derek&quot;,&quot;lastname&quot;:&quot;powell&quot;},&quot;phone&quot;:&quot;1-956-001-1945&quot;,&quot;__v&quot;:0},{&quot;address&quot;:{&quot;geolocation&quot;:{&quot;lat&quot;:&quot;20.1677&quot;,&quot;long&quot;:&quot;-10.6789&quot;},&quot;city&quot;:&quot;el paso&quot;,&quot;street&quot;:&quot;prospect st&quot;,&quot;number&quot;:124,&quot;zipcode&quot;:&quot;12346-0456&quot;},&quot;id&quot;:6,&quot;email&quot;:&quot;david_r@gmail.com&quot;,&quot;username&quot;:&quot;david_r&quot;,&quot;password&quot;:&quot;3478*#54&quot;,&quot;name&quot;:{&quot;firstname&quot;:&quot;david&quot;,&quot;lastname&quot;:&quot;russell&quot;},&quot;phone&quot;:&quot;1-678-345-9856&quot;,&quot;__v&quot;:0},{&quot;address&quot;:{&quot;geolocation&quot;:{&quot;lat&quot;:&quot;10.3456&quot;,&quot;long&quot;:&quot;20.6419&quot;},&quot;city&quot;:&quot;fresno&quot;,&quot;street&quot;:&quot;saddle st&quot;,&quot;number&quot;:1342,&quot;zipcode&quot;:&quot;96378-0245&quot;},&quot;id&quot;:7,&quot;email&quot;:&quot;miriam@gmail.com&quot;,&quot;username&quot;:&quot;snyder&quot;,&quot;password&quot;:&quot;f238&amp;@*$&quot;,&quot;name&quot;:{&quot;firstname&quot;:&quot;miriam&quot;,&quot;lastname&quot;:&quot;snyder&quot;},&quot;phone&quot;:&quot;1-123-943-0563&quot;,&quot;__v&quot;:0},{&quot;address&quot;:{&quot;geolocation&quot;:{&quot;lat&quot;:&quot;50.3456&quot;,&quot;long&quot;:&quot;10.6419&quot;},&quot;city&quot;:&quot;mesa&quot;,&quot;street&quot;:&quot;vally view ln&quot;,&quot;number&quot;:1342,&quot;zipcode&quot;:&quot;96378-0245&quot;},&quot;id&quot;:8,&quot;email&quot;:&quot;william@gmail.com&quot;,&quot;username&quot;:&quot;hopkins&quot;,&quot;password&quot;:&quot;William56$hj&quot;,&quot;name&quot;:{&quot;firstname&quot;:&quot;william&quot;,&quot;lastname&quot;:&quot;hopkins&quot;},&quot;phone&quot;:&quot;1-478-001-0890&quot;,&quot;__v&quot;:0},{&quot;address&quot;:{&quot;geolocation&quot;:{&quot;lat&quot;:&quot;40.12456&quot;,&quot;long&quot;:&quot;20.5419&quot;},&quot;city&quot;:&quot;miami&quot;,&quot;street&quot;:&quot;avondale ave&quot;,&quot;number&quot;:345,&quot;zipcode&quot;:&quot;96378-0245&quot;},&quot;id&quot;:9,&quot;email&quot;:&quot;kate@gmail.com&quot;,&quot;username&quot;:&quot;kate_h&quot;,&quot;password&quot;:&quot;kfejk@*_&quot;,&quot;name&quot;:{&quot;firstname&quot;:&quot;kate&quot;,&quot;lastname&quot;:&quot;hale&quot;},&quot;phone&quot;:&quot;1-678-456-1934&quot;,&quot;__v&quot;:0},{&quot;address&quot;:{&quot;geolocation&quot;:{&quot;lat&quot;:&quot;30.24788&quot;,&quot;long&quot;:&quot;-20.545419&quot;},&quot;city&quot;:&quot;fort wayne&quot;,&quot;street&quot;:&quot;oak lawn ave&quot;,&quot;number&quot;:526,&quot;zipcode&quot;:&quot;10256-4532&quot;},&quot;id&quot;:10,&quot;email&quot;:&quot;jimmie@gmail.com&quot;,&quot;username&quot;:&quot;jimmie_k&quot;,&quot;password&quot;:&quot;klein*#%*&quot;,&quot;name&quot;:{&quot;firstname&quot;:&quot;jimmie&quot;,&quot;lastname&quot;:&quot;klein&quot;},&quot;phone&quot;:&quot;1-104-001-4567&quot;,&quot;__v&quot;:0}]
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.11">
+      <div class="step-ref passed">11</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.12">
+      <div class="step-ref passed">12</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>print response</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.12">14:13:48.443 [print] [
+  {
+    &quot;address&quot;: {
+      &quot;geolocation&quot;: {
+        &quot;lat&quot;: &quot;-37.3159&quot;,
+        &quot;long&quot;: &quot;81.1496&quot;
+      },
+      &quot;city&quot;: &quot;kilcoole&quot;,
+      &quot;street&quot;: &quot;new road&quot;,
+      &quot;number&quot;: 7682,
+      &quot;zipcode&quot;: &quot;12926-3874&quot;
+    },
+    &quot;id&quot;: 1,
+    &quot;email&quot;: &quot;john@gmail.com&quot;,
+    &quot;username&quot;: &quot;johnd&quot;,
+    &quot;password&quot;: &quot;m38rmF$&quot;,
+    &quot;name&quot;: {
+      &quot;firstname&quot;: &quot;john&quot;,
+      &quot;lastname&quot;: &quot;doe&quot;
+    },
+    &quot;phone&quot;: &quot;1-570-236-7033&quot;,
+    &quot;__v&quot;: 0
+  },
+  {
+    &quot;address&quot;: {
+      &quot;geolocation&quot;: {
+        &quot;lat&quot;: &quot;-37.3159&quot;,
+        &quot;long&quot;: &quot;81.1496&quot;
+      },
+      &quot;city&quot;: &quot;kilcoole&quot;,
+      &quot;street&quot;: &quot;Lovers Ln&quot;,
+      &quot;number&quot;: 7267,
+      &quot;zipcode&quot;: &quot;12926-3874&quot;
+    },
+    &quot;id&quot;: 2,
+    &quot;email&quot;: &quot;morrison@gmail.com&quot;,
+    &quot;username&quot;: &quot;mor_2314&quot;,
+    &quot;password&quot;: &quot;83r5^_&quot;,
+    &quot;name&quot;: {
+      &quot;firstname&quot;: &quot;david&quot;,
+      &quot;lastname&quot;: &quot;morrison&quot;
+    },
+    &quot;phone&quot;: &quot;1-570-236-7033&quot;,
+    &quot;__v&quot;: 0
+  },
+  {
+    &quot;address&quot;: {
+      &quot;geolocation&quot;: {
+        &quot;lat&quot;: &quot;40.3467&quot;,
+        &quot;long&quot;: &quot;-30.1310&quot;
+      },
+      &quot;city&quot;: &quot;Cullman&quot;,
+      &quot;street&quot;: &quot;Frances Ct&quot;,
+      &quot;number&quot;: 86,
+      &quot;zipcode&quot;: &quot;29567-1452&quot;
+    },
+    &quot;id&quot;: 3,
+    &quot;email&quot;: &quot;kevin@gmail.com&quot;,
+    &quot;username&quot;: &quot;kevinryan&quot;,
+    &quot;password&quot;: &quot;kev02937@&quot;,
+    &quot;name&quot;: {
+      &quot;firstname&quot;: &quot;kevin&quot;,
+      &quot;lastname&quot;: &quot;ryan&quot;
+    },
+    &quot;phone&quot;: &quot;1-567-094-1345&quot;,
+    &quot;__v&quot;: 0
+  },
+  {
+    &quot;address&quot;: {
+      &quot;geolocation&quot;: {
+        &quot;lat&quot;: &quot;50.3467&quot;,
+        &quot;long&quot;: &quot;-20.1310&quot;
+      },
+      &quot;city&quot;: &quot;San Antonio&quot;,
+      &quot;street&quot;: &quot;Hunters Creek Dr&quot;,
+      &quot;number&quot;: 6454,
+      &quot;zipcode&quot;: &quot;98234-1734&quot;
+    },
+    &quot;id&quot;: 4,
+    &quot;email&quot;: &quot;don@gmail.com&quot;,
+    &quot;username&quot;: &quot;donero&quot;,
+    &quot;password&quot;: &quot;ewedon&quot;,
+    &quot;name&quot;: {
+      &quot;firstname&quot;: &quot;don&quot;,
+      &quot;lastname&quot;: &quot;romer&quot;
+    },
+    &quot;phone&quot;: &quot;1-765-789-6734&quot;,
+    &quot;__v&quot;: 0
+  },
+  {
+    &quot;address&quot;: {
+      &quot;geolocation&quot;: {
+        &quot;lat&quot;: &quot;40.3467&quot;,
+        &quot;long&quot;: &quot;-40.1310&quot;
+      },
+      &quot;city&quot;: &quot;san Antonio&quot;,
+      &quot;street&quot;: &quot;adams St&quot;,
+      &quot;number&quot;: 245,
+      &quot;zipcode&quot;: &quot;80796-1234&quot;
+    },
+    &quot;id&quot;: 5,
+    &quot;email&quot;: &quot;derek@gmail.com&quot;,
+    &quot;username&quot;: &quot;derek&quot;,
+    &quot;password&quot;: &quot;jklg*_56&quot;,
+    &quot;name&quot;: {
+      &quot;firstname&quot;: &quot;derek&quot;,
+      &quot;lastname&quot;: &quot;powell&quot;
+    },
+    &quot;phone&quot;: &quot;1-956-001-1945&quot;,
+    &quot;__v&quot;: 0
+  },
+  {
+    &quot;address&quot;: {
+      &quot;geolocation&quot;: {
+        &quot;lat&quot;: &quot;20.1677&quot;,
+        &quot;long&quot;: &quot;-10.6789&quot;
+      },
+      &quot;city&quot;: &quot;el paso&quot;,
+      &quot;street&quot;: &quot;prospect st&quot;,
+      &quot;number&quot;: 124,
+      &quot;zipcode&quot;: &quot;12346-0456&quot;
+    },
+    &quot;id&quot;: 6,
+    &quot;email&quot;: &quot;david_r@gmail.com&quot;,
+    &quot;username&quot;: &quot;david_r&quot;,
+    &quot;password&quot;: &quot;3478*#54&quot;,
+    &quot;name&quot;: {
+      &quot;firstname&quot;: &quot;david&quot;,
+      &quot;lastname&quot;: &quot;russell&quot;
+    },
+    &quot;phone&quot;: &quot;1-678-345-9856&quot;,
+    &quot;__v&quot;: 0
+  },
+  {
+    &quot;address&quot;: {
+      &quot;geolocation&quot;: {
+        &quot;lat&quot;: &quot;10.3456&quot;,
+        &quot;long&quot;: &quot;20.6419&quot;
+      },
+      &quot;city&quot;: &quot;fresno&quot;,
+      &quot;street&quot;: &quot;saddle st&quot;,
+      &quot;number&quot;: 1342,
+      &quot;zipcode&quot;: &quot;96378-0245&quot;
+    },
+    &quot;id&quot;: 7,
+    &quot;email&quot;: &quot;miriam@gmail.com&quot;,
+    &quot;username&quot;: &quot;snyder&quot;,
+    &quot;password&quot;: &quot;f238&amp;@*$&quot;,
+    &quot;name&quot;: {
+      &quot;firstname&quot;: &quot;miriam&quot;,
+      &quot;lastname&quot;: &quot;snyder&quot;
+    },
+    &quot;phone&quot;: &quot;1-123-943-0563&quot;,
+    &quot;__v&quot;: 0
+  },
+  {
+    &quot;address&quot;: {
+      &quot;geolocation&quot;: {
+        &quot;lat&quot;: &quot;50.3456&quot;,
+        &quot;long&quot;: &quot;10.6419&quot;
+      },
+      &quot;city&quot;: &quot;mesa&quot;,
+      &quot;street&quot;: &quot;vally view ln&quot;,
+      &quot;number&quot;: 1342,
+      &quot;zipcode&quot;: &quot;96378-0245&quot;
+    },
+    &quot;id&quot;: 8,
+    &quot;email&quot;: &quot;william@gmail.com&quot;,
+    &quot;username&quot;: &quot;hopkins&quot;,
+    &quot;password&quot;: &quot;William56$hj&quot;,
+    &quot;name&quot;: {
+      &quot;firstname&quot;: &quot;william&quot;,
+      &quot;lastname&quot;: &quot;hopkins&quot;
+    },
+    &quot;phone&quot;: &quot;1-478-001-0890&quot;,
+    &quot;__v&quot;: 0
+  },
+  {
+    &quot;address&quot;: {
+      &quot;geolocation&quot;: {
+        &quot;lat&quot;: &quot;40.12456&quot;,
+        &quot;long&quot;: &quot;20.5419&quot;
+      },
+      &quot;city&quot;: &quot;miami&quot;,
+      &quot;street&quot;: &quot;avondale ave&quot;,
+      &quot;number&quot;: 345,
+      &quot;zipcode&quot;: &quot;96378-0245&quot;
+    },
+    &quot;id&quot;: 9,
+    &quot;email&quot;: &quot;kate@gmail.com&quot;,
+    &quot;username&quot;: &quot;kate_h&quot;,
+    &quot;password&quot;: &quot;kfejk@*_&quot;,
+    &quot;name&quot;: {
+      &quot;firstname&quot;: &quot;kate&quot;,
+      &quot;lastname&quot;: &quot;hale&quot;
+    },
+    &quot;phone&quot;: &quot;1-678-456-1934&quot;,
+    &quot;__v&quot;: 0
+  },
+  {
+    &quot;address&quot;: {
+      &quot;geolocation&quot;: {
+        &quot;lat&quot;: &quot;30.24788&quot;,
+        &quot;long&quot;: &quot;-20.545419&quot;
+      },
+      &quot;city&quot;: &quot;fort wayne&quot;,
+      &quot;street&quot;: &quot;oak lawn ave&quot;,
+      &quot;number&quot;: 526,
+      &quot;zipcode&quot;: &quot;10256-4532&quot;
+    },
+    &quot;id&quot;: 10,
+    &quot;email&quot;: &quot;jimmie@gmail.com&quot;,
+    &quot;username&quot;: &quot;jimmie_k&quot;,
+    &quot;password&quot;: &quot;klein*#%*&quot;,
+    &quot;name&quot;: {
+      &quot;firstname&quot;: &quot;jimmie&quot;,
+      &quot;lastname&quot;: &quot;klein&quot;
+    },
+    &quot;phone&quot;: &quot;1-104-001-4567&quot;,
+    &quot;__v&quot;: 0
+  }
+]
+ 
+</div>   
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[2:14]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[2:14]</span>
+                <span class="scenario-name">get an user by id</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>440</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[2:14]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[2:14]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;https://fakestoreapi.com&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.4">14:13:48.109 karate.env system property was: null 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.15">
+      <div class="step-ref passed">15</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;users&#39;, 1</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.16">
+      <div class="step-ref passed">16</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method get</span>
+      </div>
+    </div>
+    <div class="time-cell passed">440</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.16">14:13:48.110 request:
+1 &gt; GET https://fakestoreapi.com/users/1
+1 &gt; Host: fakestoreapi.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.17)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+14:13:48.548 response time in milliseconds: 438
+1 &lt; 200
+1 &lt; Date: Tue, 02 Dec 2025 19:13:48 GMT
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; access-control-allow-origin: *
+1 &lt; etag: W/&quot;120-HNMhv14aQeBJetA9fBvavCZ+gdk&quot;
+1 &lt; x-powered-by: Express
+1 &lt; cf-cache-status: DYNAMIC
+1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
+1 &lt; Server-Timing: cfCacheStatus;desc=&quot;DYNAMIC&quot;
+1 &lt; Server-Timing: cfEdge;dur=3,cfOrigin;dur=225
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=Q33giGpyhHjqKShBRsHT7hvVXH8%2BHw5fXVnKlVL7OeakAmEGbBlOEZuLRTkWukvN9X%2F7FpvXVODSX1KHlvzTaBcwI%2Flo%2FseXSzfUOGH8W04%3D&quot;}]}
+1 &lt; Server: cloudflare
+1 &lt; CF-RAY: 9a7d24c62d5c5322-MIA
+1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+{&quot;address&quot;:{&quot;geolocation&quot;:{&quot;lat&quot;:&quot;-37.3159&quot;,&quot;long&quot;:&quot;81.1496&quot;},&quot;city&quot;:&quot;kilcoole&quot;,&quot;street&quot;:&quot;new road&quot;,&quot;number&quot;:7682,&quot;zipcode&quot;:&quot;12926-3874&quot;},&quot;id&quot;:1,&quot;email&quot;:&quot;john@gmail.com&quot;,&quot;username&quot;:&quot;johnd&quot;,&quot;password&quot;:&quot;m38rmF$&quot;,&quot;name&quot;:{&quot;firstname&quot;:&quot;john&quot;,&quot;lastname&quot;:&quot;doe&quot;},&quot;phone&quot;:&quot;1-570-236-7033&quot;,&quot;__v&quot;:0}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.17">
+      <div class="step-ref passed">17</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.18">
+      <div class="step-ref passed">18</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>print response</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.18">14:13:48.549 [print] {
+  &quot;address&quot;: {
+    &quot;geolocation&quot;: {
+      &quot;lat&quot;: &quot;-37.3159&quot;,
+      &quot;long&quot;: &quot;81.1496&quot;
+    },
+    &quot;city&quot;: &quot;kilcoole&quot;,
+    &quot;street&quot;: &quot;new road&quot;,
+    &quot;number&quot;: 7682,
+    &quot;zipcode&quot;: &quot;12926-3874&quot;
+  },
+  &quot;id&quot;: 1,
+  &quot;email&quot;: &quot;john@gmail.com&quot;,
+  &quot;username&quot;: &quot;johnd&quot;,
+  &quot;password&quot;: &quot;m38rmF$&quot;,
+  &quot;name&quot;: {
+    &quot;firstname&quot;: &quot;john&quot;,
+    &quot;lastname&quot;: &quot;doe&quot;
+  },
+  &quot;phone&quot;: &quot;1-570-236-7033&quot;,
+  &quot;__v&quot;: 0
+}
+ 
+</div>   
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[3:20]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[3:20]</span>
+                <span class="scenario-name">validate data type</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>444</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[3:20]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[3:20]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;https://fakestoreapi.com&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.4">14:13:48.193 karate.env system property was: null 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.21">
+      <div class="step-ref passed">21</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;users&#39;, 1</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.22">
+      <div class="step-ref passed">22</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method get</span>
+      </div>
+    </div>
+    <div class="time-cell passed">443</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.22">14:13:48.195 request:
+1 &gt; GET https://fakestoreapi.com/users/1
+1 &gt; Host: fakestoreapi.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.17)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+14:13:48.636 response time in milliseconds: 440
+1 &lt; 200
+1 &lt; Date: Tue, 02 Dec 2025 19:13:48 GMT
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; access-control-allow-origin: *
+1 &lt; etag: W/&quot;120-HNMhv14aQeBJetA9fBvavCZ+gdk&quot;
+1 &lt; x-powered-by: Express
+1 &lt; cf-cache-status: DYNAMIC
+1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
+1 &lt; Server-Timing: cfCacheStatus;desc=&quot;DYNAMIC&quot;
+1 &lt; Server-Timing: cfEdge;dur=5,cfOrigin;dur=229
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=HTRzc3O1Kw8tsFifTPuqfigiBUFresiVBszlmkjlYikNMy5GMYBpi48fH9Ujk1PjeU9KuBTa2mJbzCZUIZ5%2FtIvZ6ldeTp81qWeT4dXF4Y4%3D&quot;}]}
+1 &lt; Server: cloudflare
+1 &lt; CF-RAY: 9a7d24c6a9bf9af1-MIA
+1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+{&quot;address&quot;:{&quot;geolocation&quot;:{&quot;lat&quot;:&quot;-37.3159&quot;,&quot;long&quot;:&quot;81.1496&quot;},&quot;city&quot;:&quot;kilcoole&quot;,&quot;street&quot;:&quot;new road&quot;,&quot;number&quot;:7682,&quot;zipcode&quot;:&quot;12926-3874&quot;},&quot;id&quot;:1,&quot;email&quot;:&quot;john@gmail.com&quot;,&quot;username&quot;:&quot;johnd&quot;,&quot;password&quot;:&quot;m38rmF$&quot;,&quot;name&quot;:{&quot;firstname&quot;:&quot;john&quot;,&quot;lastname&quot;:&quot;doe&quot;},&quot;phone&quot;:&quot;1-570-236-7033&quot;,&quot;__v&quot;:0}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.23">
+      <div class="step-ref passed">23</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.24">
+      <div class="step-ref passed">24</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response contains {id: &#39;#number&#39;, username: &#39;#string&#39;, email: &#39;#string&#39;, password:&#39;#string&#39; }</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.25">
+      <div class="step-ref passed">25</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>print response</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.25">14:13:48.637 [print] {
+  &quot;address&quot;: {
+    &quot;geolocation&quot;: {
+      &quot;lat&quot;: &quot;-37.3159&quot;,
+      &quot;long&quot;: &quot;81.1496&quot;
+    },
+    &quot;city&quot;: &quot;kilcoole&quot;,
+    &quot;street&quot;: &quot;new road&quot;,
+    &quot;number&quot;: 7682,
+    &quot;zipcode&quot;: &quot;12926-3874&quot;
+  },
+  &quot;id&quot;: 1,
+  &quot;email&quot;: &quot;john@gmail.com&quot;,
+  &quot;username&quot;: &quot;johnd&quot;,
+  &quot;password&quot;: &quot;m38rmF$&quot;,
+  &quot;name&quot;: {
+    &quot;firstname&quot;: &quot;john&quot;,
+    &quot;lastname&quot;: &quot;doe&quot;
+  },
+  &quot;phone&quot;: &quot;1-570-236-7033&quot;,
+  &quot;__v&quot;: 0
+}
+ 
+</div>   
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[4:27]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[4:27]</span>
+                <span class="scenario-name">Create a new user and valide creation</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>860</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[4:27]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[4:27]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;https://fakestoreapi.com&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.4">14:13:48.446 karate.env system property was: null 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.28">
+      <div class="step-ref passed">28</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def new_user = read(&#39;classpath:examples/Data/userbody.json&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.29">
+      <div class="step-ref passed">29</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>set new_user.username = &quot;mairons&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.30">
+      <div class="step-ref passed">30</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>set new_user.email = &quot;correo@correo.com&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.31">
+      <div class="step-ref passed">31</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>set new_user.password = &quot;contraseña&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.32">
+      <div class="step-ref passed">32</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;users&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.33">
+      <div class="step-ref passed">33</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request new_user</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.34">
+      <div class="step-ref passed">34</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method post</span>
+      </div>
+    </div>
+    <div class="time-cell passed">437</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.34">14:13:48.450 request:
+1 &gt; POST https://fakestoreapi.com/users
+1 &gt; Content-Type: application/json; charset=UTF-8
+1 &gt; Content-Length: 261
+1 &gt; Host: fakestoreapi.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.17)
+1 &gt; Accept-Encoding: gzip,deflate
+{&quot;email&quot;:&quot;correo@correo.com&quot;,&quot;username&quot;:&quot;mairons&quot;,&quot;password&quot;:&quot;contraseña&quot;,&quot;name&quot;:{&quot;firstname&quot;:&quot;john&quot;,&quot;lastname&quot;:&quot;doe&quot;},&quot;address&quot;:{&quot;geolocation&quot;:{&quot;lat&quot;:&quot;1&quot;,&quot;long&quot;:&quot;2&quot;},&quot;city&quot;:&quot;Bogota&quot;,&quot;street&quot;:&quot;Calle falsa&quot;,&quot;number&quot;:123,&quot;zipcode&quot;:&quot;11111&quot;},&quot;phone&quot;:&quot;123-456-789&quot;}
+
+14:13:48.886 response time in milliseconds: 435
+1 &lt; 201
+1 &lt; Date: Tue, 02 Dec 2025 19:13:49 GMT
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Content-Length: 9
+1 &lt; Connection: keep-alive
+1 &lt; access-control-allow-origin: *
+1 &lt; etag: W/&quot;9-hVv0cNJophUD7CGn+ZqXp8tVGo0&quot;
+1 &lt; x-powered-by: Express
+1 &lt; cf-cache-status: DYNAMIC
+1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
+1 &lt; Server-Timing: cfCacheStatus;desc=&quot;DYNAMIC&quot;
+1 &lt; Server-Timing: cfEdge;dur=4,cfOrigin;dur=227
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=YledGtCD6eRYoevyfcYvR91rKAhf3vOKLYyHrysz5uX6NFahONpmpDjKlaewWzFio%2BkFI8r0YbeK9ab1rgs7r1306TcM8Db3A3gBAqzkR9I%3D&quot;}]}
+1 &lt; Server: cloudflare
+1 &lt; CF-RAY: 9a7d24c838ab4fce-MIA
+1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+{&quot;id&quot;:11}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.35">
+      <div class="step-ref passed">35</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 201</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.36">
+      <div class="step-ref passed">36</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def validate_user_created = response.id</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.37">
+      <div class="step-ref passed">37</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>print response</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.37">14:13:48.887 [print] {
+  &quot;id&quot;: 11
+}
+ 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.38">
+      <div class="step-ref passed">38</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;users&#39;, validate_user_created</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.39">
+      <div class="step-ref passed">39</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method get</span>
+      </div>
+    </div>
+    <div class="time-cell passed">419</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.39">14:13:48.889 request:
+2 &gt; GET https://fakestoreapi.com/users/11
+2 &gt; Host: fakestoreapi.com
+2 &gt; Connection: Keep-Alive
+2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.17)
+2 &gt; Accept-Encoding: gzip,deflate
+
+
+14:13:49.306 response time in milliseconds: 416
+2 &lt; 200
+2 &lt; Date: Tue, 02 Dec 2025 19:13:49 GMT
+2 &lt; Content-Type: application/json; charset=utf-8
+2 &lt; Transfer-Encoding: chunked
+2 &lt; Connection: keep-alive
+2 &lt; access-control-allow-origin: *
+2 &lt; etag: W/&quot;4-K+iMpCQsduglOsYkdIUQZQMtaDM&quot;
+2 &lt; x-powered-by: Express
+2 &lt; cf-cache-status: DYNAMIC
+2 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
+2 &lt; Server-Timing: cfCacheStatus;desc=&quot;DYNAMIC&quot;
+2 &lt; Server-Timing: cfEdge;dur=7,cfOrigin;dur=225
+2 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=PzbobkGLfe4iZ2t8oRdTA%2Bp3M3axfp6dhQ2MhTF0V8nWeXCMIkjfRI7DoZquyLUF4NGYlmoJ8iedZAkmxw9M179aTaC4buazRKhKcl1WlZs%3D&quot;}]}
+2 &lt; Server: cloudflare
+2 &lt; CF-RAY: 9a7d24cad881961a-MIA
+2 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+null
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.40">
+      <div class="step-ref passed">40</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment">#This API allows make this request, but doesn&#39;t return  data of new users created</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.42">
+      <div class="step-ref passed">42</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>print response</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.42">14:13:49.307 [print] null 
+</div>   
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[5:45]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[5:45]</span>
+                <span class="scenario-name">Edit a existent user.</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>329</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[5:45]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[5:45]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;https://fakestoreapi.com&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.4">14:13:48.552 karate.env system property was: null 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.46">
+      <div class="step-ref passed">46</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def user_already_created = read(&#39;classpath:examples/Data/userbody.json&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.47">
+      <div class="step-ref passed">47</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>set user_already_created.username = &quot;username editado&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.49">
+      <div class="step-ref passed">49</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;users&#39;, 1</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.50">
+      <div class="step-ref passed">50</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request user_already_created</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.51">
+      <div class="step-ref passed">51</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method put</span>
+      </div>
+    </div>
+    <div class="time-cell passed">326</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.51">14:13:48.557 request:
+1 &gt; PUT https://fakestoreapi.com/users/1
+1 &gt; Content-Type: application/json; charset=UTF-8
+1 &gt; Content-Length: 262
+1 &gt; Host: fakestoreapi.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.17)
+1 &gt; Accept-Encoding: gzip,deflate
+{&quot;email&quot;:&quot;test@mail.com&quot;,&quot;username&quot;:&quot;username editado&quot;,&quot;password&quot;:&quot;pass123&quot;,&quot;name&quot;:{&quot;firstname&quot;:&quot;john&quot;,&quot;lastname&quot;:&quot;doe&quot;},&quot;address&quot;:{&quot;geolocation&quot;:{&quot;lat&quot;:&quot;1&quot;,&quot;long&quot;:&quot;2&quot;},&quot;city&quot;:&quot;Bogota&quot;,&quot;street&quot;:&quot;Calle falsa&quot;,&quot;number&quot;:123,&quot;zipcode&quot;:&quot;11111&quot;},&quot;phone&quot;:&quot;123-456-789&quot;}
+
+14:13:48.880 response time in milliseconds: 322
+1 &lt; 200
+1 &lt; Date: Tue, 02 Dec 2025 19:13:49 GMT
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; access-control-allow-origin: *
+1 &lt; etag: W/&quot;106-b9PdbQpsHHGT+FUeahrLBiB3Ii8&quot;
+1 &lt; x-powered-by: Express
+1 &lt; cf-cache-status: DYNAMIC
+1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
+1 &lt; Server-Timing: cfCacheStatus;desc=&quot;DYNAMIC&quot;
+1 &lt; Server-Timing: cfEdge;dur=4,cfOrigin;dur=123
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=sG1UAjUMf7kWaROOi9%2FvVYUz0JYY5X%2BZQiL2njZuq3qKDCYF%2FNkx1jiqA%2Fqc1jTOhmiu2AOoiajzPq39b2sIi3xEHd3e%2F0c0hdjIfcERLQM%3D&quot;}]}
+1 &lt; Server: cloudflare
+1 &lt; CF-RAY: 9a7d24c8dae188f6-MIA
+1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+{&quot;email&quot;:&quot;test@mail.com&quot;,&quot;username&quot;:&quot;username editado&quot;,&quot;password&quot;:&quot;pass123&quot;,&quot;name&quot;:{&quot;firstname&quot;:&quot;john&quot;,&quot;lastname&quot;:&quot;doe&quot;},&quot;address&quot;:{&quot;geolocation&quot;:{&quot;lat&quot;:&quot;1&quot;,&quot;long&quot;:&quot;2&quot;},&quot;city&quot;:&quot;Bogota&quot;,&quot;street&quot;:&quot;Calle falsa&quot;,&quot;number&quot;:123,&quot;zipcode&quot;:&quot;11111&quot;},&quot;phone&quot;:&quot;123-456-789&quot;}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.52">
+      <div class="step-ref passed">52</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.53">
+      <div class="step-ref passed">53</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>print response</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.53">14:13:48.881 [print] {
+  &quot;email&quot;: &quot;test@mail.com&quot;,
+  &quot;username&quot;: &quot;username editado&quot;,
+  &quot;password&quot;: &quot;pass123&quot;,
+  &quot;name&quot;: {
+    &quot;firstname&quot;: &quot;john&quot;,
+    &quot;lastname&quot;: &quot;doe&quot;
+  },
+  &quot;address&quot;: {
+    &quot;geolocation&quot;: {
+      &quot;lat&quot;: &quot;1&quot;,
+      &quot;long&quot;: &quot;2&quot;
+    },
+    &quot;city&quot;: &quot;Bogota&quot;,
+    &quot;street&quot;: &quot;Calle falsa&quot;,
+    &quot;number&quot;: 123,
+    &quot;zipcode&quot;: &quot;11111&quot;
+  },
+  &quot;phone&quot;: &quot;123-456-789&quot;
+}
+ 
+</div>   
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[6:55]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[6:55]</span>
+                <span class="scenario-name">Delete users</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>409</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[6:55]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[6:55]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;https://fakestoreapi.com&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.4">14:13:48.640 karate.env system property was: null 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.56">
+      <div class="step-ref passed">56</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;users&#39;, 2</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.57">
+      <div class="step-ref passed">57</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method delete</span>
+      </div>
+    </div>
+    <div class="time-cell passed">409</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.57">14:13:48.642 request:
+1 &gt; DELETE https://fakestoreapi.com/users/2
+1 &gt; Host: fakestoreapi.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.17)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+14:13:49.049 response time in milliseconds: 406
+1 &lt; 200
+1 &lt; Date: Tue, 02 Dec 2025 19:13:49 GMT
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; access-control-allow-origin: *
+1 &lt; etag: W/&quot;12d-rQ3vazNILlcEdp3VtaYW0Rr1+SY&quot;
+1 &lt; x-powered-by: Express
+1 &lt; cf-cache-status: DYNAMIC
+1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
+1 &lt; Server-Timing: cfCacheStatus;desc=&quot;DYNAMIC&quot;
+1 &lt; Server-Timing: cfEdge;dur=3,cfOrigin;dur=223
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=ZW7GOjQJbPz6crvqP0LS3t8pkkuMmplRqzFMULeCDGH89hgLz18j2dU9OpyKiwU5n4pePSsxAzpk5XWEUyYqUs%2F9%2B%2FNGqtzaAW8T2Yo15U0%3D&quot;}]}
+1 &lt; Server: cloudflare
+1 &lt; CF-RAY: 9a7d24c958c7adba-MIA
+1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+{&quot;address&quot;:{&quot;geolocation&quot;:{&quot;lat&quot;:&quot;-37.3159&quot;,&quot;long&quot;:&quot;81.1496&quot;},&quot;city&quot;:&quot;kilcoole&quot;,&quot;street&quot;:&quot;Lovers Ln&quot;,&quot;number&quot;:7267,&quot;zipcode&quot;:&quot;12926-3874&quot;},&quot;id&quot;:2,&quot;email&quot;:&quot;morrison@gmail.com&quot;,&quot;username&quot;:&quot;mor_2314&quot;,&quot;password&quot;:&quot;83r5^_&quot;,&quot;name&quot;:{&quot;firstname&quot;:&quot;david&quot;,&quot;lastname&quot;:&quot;morrison&quot;},&quot;phone&quot;:&quot;1-570-236-7033&quot;,&quot;__v&quot;:0}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.58">
+      <div class="step-ref passed">58</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.59">
+      <div class="step-ref passed">59</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>print response</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.59">14:13:49.050 [print] {
+  &quot;address&quot;: {
+    &quot;geolocation&quot;: {
+      &quot;lat&quot;: &quot;-37.3159&quot;,
+      &quot;long&quot;: &quot;81.1496&quot;
+    },
+    &quot;city&quot;: &quot;kilcoole&quot;,
+    &quot;street&quot;: &quot;Lovers Ln&quot;,
+    &quot;number&quot;: 7267,
+    &quot;zipcode&quot;: &quot;12926-3874&quot;
+  },
+  &quot;id&quot;: 2,
+  &quot;email&quot;: &quot;morrison@gmail.com&quot;,
+  &quot;username&quot;: &quot;mor_2314&quot;,
+  &quot;password&quot;: &quot;83r5^_&quot;,
+  &quot;name&quot;: {
+    &quot;firstname&quot;: &quot;david&quot;,
+    &quot;lastname&quot;: &quot;morrison&quot;
+  },
+  &quot;phone&quot;: &quot;1-570-236-7033&quot;,
+  &quot;__v&quot;: 0
+}
+ 
+</div>   
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[7:63]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[7:63]</span>
+                <span class="scenario-name">Get a id user non-existent</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time failed">
+              <span>ms:</span>&nbsp;<span>436</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[7:63]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[7:63]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;https://fakestoreapi.com&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.4">14:13:48.884 karate.env system property was: null 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.64">
+      <div class="step-ref passed">64</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;carts&#39;, 500</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.65">
+      <div class="step-ref passed">65</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method get</span>
+      </div>
+    </div>
+    <div class="time-cell passed">436</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.65">14:13:48.885 request:
+1 &gt; GET https://fakestoreapi.com/carts/500
+1 &gt; Host: fakestoreapi.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.17)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+14:13:49.320 response time in milliseconds: 434
+1 &lt; 200
+1 &lt; Date: Tue, 02 Dec 2025 19:13:49 GMT
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; access-control-allow-origin: *
+1 &lt; etag: W/&quot;4-K+iMpCQsduglOsYkdIUQZQMtaDM&quot;
+1 &lt; x-powered-by: Express
+1 &lt; cf-cache-status: DYNAMIC
+1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
+1 &lt; Server-Timing: cfCacheStatus;desc=&quot;DYNAMIC&quot;
+1 &lt; Server-Timing: cfEdge;dur=3,cfOrigin;dur=230
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=%2BPGe%2Fx2LPHweo45b10kb7I5SW2Q1FGFLySjeBs8NshI0CIeLw6zYBy9uB7Zy9MCfCrAggXtSmGz%2FUvMIdgvyRSy706YwEy5FMYW3FrLT0JQ%3D&quot;}]}
+1 &lt; Server: cloudflare
+1 &lt; CF-RAY: 9a7d24caff864645-MIA
+1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+null
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.66">
+      <div class="step-ref failed">66</div>
+      
+      <div class="step-cell failed">
+        <span>Then</span>&nbsp;<span>status 400</span>
+      </div>
+    </div>
+    <div class="time-cell failed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.66">14:13:49.320 classpath:examples/users/users.feature:66
+Then status 400
+status code was: 200, expected: 400, response time in milliseconds: 434, url: https://fakestoreapi.com/carts/500, response: 
+null
+classpath:examples/users/users.feature:66
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.67">
+      <div class="step-ref skipped">67</div>
+      
+      <div class="step-cell skipped">
+        <span>And</span>&nbsp;<span>print response</span>
+      </div>
+    </div>
+    <div class="time-cell skipped">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[8:69]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[8:69]</span>
+                <span class="scenario-name">Create new user with missing data</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time failed">
+              <span>ms:</span>&nbsp;<span>438</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[8:69]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[8:69]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;https://fakestoreapi.com&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.4">14:13:49.051 karate.env system property was: null 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment">#This test will take into account the required fields documented in the app</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.71">
+      <div class="step-ref passed">71</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def new_user2 = read(&#39;classpath:examples/Data/userbody.json&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment">#Create a new user with only username field</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.73">
+      <div class="step-ref passed">73</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>set new_user2.username = &quot;mairons&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.74">
+      <div class="step-ref passed">74</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;users&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.75">
+      <div class="step-ref passed">75</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request new_user2</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.76">
+      <div class="step-ref passed">76</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method post</span>
+      </div>
+    </div>
+    <div class="time-cell passed">435</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.76">14:13:49.056 request:
+1 &gt; POST https://fakestoreapi.com/users
+1 &gt; Content-Type: application/json; charset=UTF-8
+1 &gt; Content-Length: 253
+1 &gt; Host: fakestoreapi.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.17)
+1 &gt; Accept-Encoding: gzip,deflate
+{&quot;email&quot;:&quot;test@mail.com&quot;,&quot;username&quot;:&quot;mairons&quot;,&quot;password&quot;:&quot;pass123&quot;,&quot;name&quot;:{&quot;firstname&quot;:&quot;john&quot;,&quot;lastname&quot;:&quot;doe&quot;},&quot;address&quot;:{&quot;geolocation&quot;:{&quot;lat&quot;:&quot;1&quot;,&quot;long&quot;:&quot;2&quot;},&quot;city&quot;:&quot;Bogota&quot;,&quot;street&quot;:&quot;Calle falsa&quot;,&quot;number&quot;:123,&quot;zipcode&quot;:&quot;11111&quot;},&quot;phone&quot;:&quot;123-456-789&quot;}
+
+14:13:49.489 response time in milliseconds: 432
+1 &lt; 201
+1 &lt; Date: Tue, 02 Dec 2025 19:13:49 GMT
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Content-Length: 8
+1 &lt; Connection: keep-alive
+1 &lt; access-control-allow-origin: *
+1 &lt; etag: W/&quot;8-h5EdGu1QmHe4OkjsU292jNzSLfE&quot;
+1 &lt; x-powered-by: Express
+1 &lt; cf-cache-status: DYNAMIC
+1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
+1 &lt; Server-Timing: cfCacheStatus;desc=&quot;DYNAMIC&quot;
+1 &lt; Server-Timing: cfEdge;dur=5,cfOrigin;dur=222
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=JWu1Izl3ZS2SNln8560Lz3q2buO1LJ3MnfhxZk6TE64kaF8chaC2nxdvzPh%2B92Y09NTK3BLnsYTDgU3hj%2FTPDTZJZ1K3yuFjVmnKr%2FxEF70%3D&quot;}]}
+1 &lt; Server: cloudflare
+1 &lt; CF-RAY: 9a7d24cc0e406db6-MIA
+1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+{&quot;id&quot;:1}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.77">
+      <div class="step-ref failed">77</div>
+      
+      <div class="step-cell failed">
+        <span>Then</span>&nbsp;<span>status 400</span>
+      </div>
+    </div>
+    <div class="time-cell failed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.77">14:13:49.490 classpath:examples/users/users.feature:77
+Then status 400
+status code was: 201, expected: 400, response time in milliseconds: 432, url: https://fakestoreapi.com/users, response: 
+{&quot;id&quot;:1}
+classpath:examples/users/users.feature:77
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.78">
+      <div class="step-ref skipped">78</div>
+      
+      <div class="step-cell skipped">
+        <span>And</span>&nbsp;<span>print response</span>
+      </div>
+    </div>
+    <div class="time-cell skipped">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[9:80]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[9:80]</span>
+                <span class="scenario-name">Create new user with an username already created (&quot;johnd&quot; by user with id &quot;1&quot;)</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time failed">
+              <span>ms:</span>&nbsp;<span>434</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[9:80]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[9:80]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;https://fakestoreapi.com&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.4">14:13:49.309 karate.env system property was: null 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.81">
+      <div class="step-ref passed">81</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def username_already_created = read(&#39;classpath:examples/Data/userbody.json&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.82">
+      <div class="step-ref passed">82</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>set username_already_created.username = &quot;johnd&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.83">
+      <div class="step-ref passed">83</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>set username_already_created.email = &quot;jhonr@example.com&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.84">
+      <div class="step-ref passed">84</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>set username_already_created.password = &quot;contraseña&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.85">
+      <div class="step-ref passed">85</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;users&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.86">
+      <div class="step-ref passed">86</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method post</span>
+      </div>
+    </div>
+    <div class="time-cell passed">431</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.86">14:13:49.313 request:
+1 &gt; POST https://fakestoreapi.com/users
+1 &gt; Host: fakestoreapi.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.17)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+14:13:49.743 response time in milliseconds: 429
+1 &lt; 201
+1 &lt; Date: Tue, 02 Dec 2025 19:13:49 GMT
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Content-Length: 8
+1 &lt; Connection: keep-alive
+1 &lt; access-control-allow-origin: *
+1 &lt; etag: W/&quot;8-h5EdGu1QmHe4OkjsU292jNzSLfE&quot;
+1 &lt; x-powered-by: Express
+1 &lt; cf-cache-status: DYNAMIC
+1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
+1 &lt; Server-Timing: cfCacheStatus;desc=&quot;DYNAMIC&quot;
+1 &lt; Server-Timing: cfEdge;dur=7,cfOrigin;dur=223
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=%2B%2F3sySPxg%2BPESLSFhIbJJw9NBPV2E5irORcac0fbF2L8Gy3ImOS486hPeB3YlpPoD2bPqpdtSCvOmCjhDqpZBgtMpuVkNxSPZBeePtp8&quot;}]}
+1 &lt; Server: cloudflare
+1 &lt; CF-RAY: 9a7d24cd9b6b1277-MIA
+1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+{&quot;id&quot;:1}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment">#This depends of businees logic</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.88">
+      <div class="step-ref failed">88</div>
+      
+      <div class="step-cell failed">
+        <span>Then</span>&nbsp;<span>status 400</span>
+      </div>
+    </div>
+    <div class="time-cell failed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.88">14:13:49.743 classpath:examples/users/users.feature:88
+Then status 400
+status code was: 201, expected: 400, response time in milliseconds: 429, url: https://fakestoreapi.com/users, response: 
+{&quot;id&quot;:1}
+classpath:examples/users/users.feature:88
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.89">
+      <div class="step-ref skipped">89</div>
+      
+      <div class="step-cell skipped">
+        <span>And</span>&nbsp;<span>print response</span>
+      </div>
+    </div>
+    <div class="time-cell skipped">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[10:91]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[10:91]</span>
+                <span class="scenario-name">Create a user with a password that has low validation requirements</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time failed">
+              <span>ms:</span>&nbsp;<span>445</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[10:91]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[10:91]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;https://fakestoreapi.com&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.4">14:13:49.323 karate.env system property was: null 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.92">
+      <div class="step-ref passed">92</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def password_validation = read(&#39;classpath:examples/Data/userbody.json&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.93">
+      <div class="step-ref passed">93</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>set password_validation.username = &quot;usuario&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.94">
+      <div class="step-ref passed">94</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>set password_validation.email = &quot;jhonr@example.com&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment">#This could be a system security flaw</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.96">
+      <div class="step-ref passed">96</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>set password_validation.password = &quot;c&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.97">
+      <div class="step-ref passed">97</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;users&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.98">
+      <div class="step-ref passed">98</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method post</span>
+      </div>
+    </div>
+    <div class="time-cell passed">443</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.98">14:13:49.327 request:
+1 &gt; POST https://fakestoreapi.com/users
+1 &gt; Host: fakestoreapi.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.17)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+14:13:49.768 response time in milliseconds: 440
+1 &lt; 201
+1 &lt; Date: Tue, 02 Dec 2025 19:13:49 GMT
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Content-Length: 8
+1 &lt; Connection: keep-alive
+1 &lt; access-control-allow-origin: *
+1 &lt; etag: W/&quot;8-h5EdGu1QmHe4OkjsU292jNzSLfE&quot;
+1 &lt; x-powered-by: Express
+1 &lt; cf-cache-status: DYNAMIC
+1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
+1 &lt; Server-Timing: cfCacheStatus;desc=&quot;DYNAMIC&quot;
+1 &lt; Server-Timing: cfEdge;dur=5,cfOrigin;dur=220
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=xCFSFYOVhs50jmx1C8XRmQ7lw6xOlZ%2Bx7h0xnjpZTy7tvWIFJMcPBQUKC3dGQyRzUPbZxobrhpY%2Bxqs8XgCvWKbul0Yx3%2F275SYXYnAwVWM%3D&quot;}]}
+1 &lt; Server: cloudflare
+1 &lt; CF-RAY: 9a7d24cdc832a663-MIA
+1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+{&quot;id&quot;:1}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment">#This depends of businees logic</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.100">
+      <div class="step-ref failed">100</div>
+      
+      <div class="step-cell failed">
+        <span>Then</span>&nbsp;<span>status 400</span>
+      </div>
+    </div>
+    <div class="time-cell failed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.100">14:13:49.769 classpath:examples/users/users.feature:100
+Then status 400
+status code was: 201, expected: 400, response time in milliseconds: 440, url: https://fakestoreapi.com/users, response: 
+{&quot;id&quot;:1}
+classpath:examples/users/users.feature:100
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.101">
+      <div class="step-ref skipped">101</div>
+      
+      <div class="step-cell skipped">
+        <span>And</span>&nbsp;<span>print response</span>
+      </div>
+    </div>
+    <div class="time-cell skipped">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[11:103]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[11:103]</span>
+                <span class="scenario-name">try to create a user without password</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time failed">
+              <span>ms:</span>&nbsp;<span>436</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[11:103]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[11:103]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;https://fakestoreapi.com&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.4">14:13:49.493 karate.env system property was: null 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.104">
+      <div class="step-ref passed">104</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def password_validation = read(&#39;classpath:examples/Data/userbody.json&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.105">
+      <div class="step-ref passed">105</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>set password_validation.username = &quot;usuario2&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.106">
+      <div class="step-ref passed">106</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>set password_validation.email = &quot;jhonr@example.com&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment">#This could be a system security flaw</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.108">
+      <div class="step-ref passed">108</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>set password_validation.password = &quot;&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.109">
+      <div class="step-ref passed">109</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;users&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.110">
+      <div class="step-ref passed">110</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method post</span>
+      </div>
+    </div>
+    <div class="time-cell passed">433</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.110">14:13:49.499 request:
+1 &gt; POST https://fakestoreapi.com/users
+1 &gt; Host: fakestoreapi.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.17)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+14:13:49.930 response time in milliseconds: 430
+1 &lt; 201
+1 &lt; Date: Tue, 02 Dec 2025 19:13:50 GMT
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Content-Length: 8
+1 &lt; Connection: keep-alive
+1 &lt; access-control-allow-origin: *
+1 &lt; etag: W/&quot;8-h5EdGu1QmHe4OkjsU292jNzSLfE&quot;
+1 &lt; x-powered-by: Express
+1 &lt; cf-cache-status: DYNAMIC
+1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
+1 &lt; Server-Timing: cfCacheStatus;desc=&quot;DYNAMIC&quot;
+1 &lt; Server-Timing: cfEdge;dur=4,cfOrigin;dur=223
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=erUACleOHjy5AeziKiCO7cU4fS6nQOdhpgGFENxBFCfYSNYd80FLh%2BhXh8cD29kTJ7UWw2LJFXBKd0vzQ8autbMC99Ac5shAt86W0zLWmq0%3D&quot;}]}
+1 &lt; Server: cloudflare
+1 &lt; CF-RAY: 9a7d24cecf3d8b1f-MIA
+1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+{&quot;id&quot;:1}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment">#This depends of businees logic</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.112">
+      <div class="step-ref failed">112</div>
+      
+      <div class="step-cell failed">
+        <span>Then</span>&nbsp;<span>status 400</span>
+      </div>
+    </div>
+    <div class="time-cell failed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.112">14:13:49.931 classpath:examples/users/users.feature:112
+Then status 400
+status code was: 201, expected: 400, response time in milliseconds: 430, url: https://fakestoreapi.com/users, response: 
+{&quot;id&quot;:1}
+classpath:examples/users/users.feature:112
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.113">
+      <div class="step-ref skipped">113</div>
+      
+      <div class="step-cell skipped">
+        <span>And</span>&nbsp;<span>print response</span>
+      </div>
+    </div>
+    <div class="time-cell skipped">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[12:115]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[12:115]</span>
+                <span class="scenario-name">Try deleted a user non-existent</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time failed">
+              <span>ms:</span>&nbsp;<span>439</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[12:115]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[12:115]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;https://fakestoreapi.com&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.4">14:13:49.746 karate.env system property was: null 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.116">
+      <div class="step-ref passed">116</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;users&#39;, 5000</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.117">
+      <div class="step-ref passed">117</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method delete</span>
+      </div>
+    </div>
+    <div class="time-cell passed">439</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.117">14:13:49.748 request:
+1 &gt; DELETE https://fakestoreapi.com/users/5000
+1 &gt; Host: fakestoreapi.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.17)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+14:13:50.185 response time in milliseconds: 436
+1 &lt; 200
+1 &lt; Date: Tue, 02 Dec 2025 19:13:50 GMT
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; access-control-allow-origin: *
+1 &lt; etag: W/&quot;4-K+iMpCQsduglOsYkdIUQZQMtaDM&quot;
+1 &lt; x-powered-by: Express
+1 &lt; cf-cache-status: DYNAMIC
+1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
+1 &lt; Server-Timing: cfCacheStatus;desc=&quot;DYNAMIC&quot;
+1 &lt; Server-Timing: cfEdge;dur=5,cfOrigin;dur=221
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=Rh52%2Fz%2FD7sZyymKzFSILTkV9D%2B7pgveICycD7JG8%2B3TYGQosYIMN6yzFCF1LbSPHpLPsVMCRnWuhLk6JU667QgG6T3hNHIyJZ%2B%2BDDwDSYmo%3D&quot;}]}
+1 &lt; Server: cloudflare
+1 &lt; CF-RAY: 9a7d24d06f12a68f-MIA
+1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+null
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.118">
+      <div class="step-ref failed">118</div>
+      
+      <div class="step-cell failed">
+        <span>Then</span>&nbsp;<span>status 400</span>
+      </div>
+    </div>
+    <div class="time-cell failed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.118">14:13:50.185 classpath:examples/users/users.feature:118
+Then status 400
+status code was: 200, expected: 400, response time in milliseconds: 436, url: https://fakestoreapi.com/users/5000, response: 
+null
+classpath:examples/users/users.feature:118
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.119">
+      <div class="step-ref skipped">119</div>
+      
+      <div class="step-cell skipped">
+        <span>And</span>&nbsp;<span>print response</span>
+      </div>
+    </div>
+    <div class="time-cell skipped">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[13:121]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[13:121]</span>
+                <span class="scenario-name">try to change id of a user already created</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time failed">
+              <span>ms:</span>&nbsp;<span>449</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[13:121]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[13:121]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;https://fakestoreapi.com&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.4">14:13:49.771 karate.env system property was: null 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment">#The id must be immutable</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.123">
+      <div class="step-ref passed">123</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def user_id = read(&#39;classpath:examples/Data/userbody.json&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.124">
+      <div class="step-ref passed">124</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>set user_id.id = 50</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.125">
+      <div class="step-ref passed">125</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;users&#39;, 6</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.126">
+      <div class="step-ref passed">126</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request user_id</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.127">
+      <div class="step-ref passed">127</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method delete</span>
+      </div>
+    </div>
+    <div class="time-cell passed">447</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.127">14:13:49.776 request:
+1 &gt; DELETE https://fakestoreapi.com/users/6
+1 &gt; Content-Type: application/json; charset=UTF-8
+1 &gt; Content-Length: 262
+1 &gt; Host: fakestoreapi.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.17)
+1 &gt; Accept-Encoding: gzip,deflate
+{&quot;email&quot;:&quot;test@mail.com&quot;,&quot;username&quot;:&quot;testuser&quot;,&quot;password&quot;:&quot;pass123&quot;,&quot;name&quot;:{&quot;firstname&quot;:&quot;john&quot;,&quot;lastname&quot;:&quot;doe&quot;},&quot;address&quot;:{&quot;geolocation&quot;:{&quot;lat&quot;:&quot;1&quot;,&quot;long&quot;:&quot;2&quot;},&quot;city&quot;:&quot;Bogota&quot;,&quot;street&quot;:&quot;Calle falsa&quot;,&quot;number&quot;:123,&quot;zipcode&quot;:&quot;11111&quot;},&quot;phone&quot;:&quot;123-456-789&quot;,&quot;id&quot;:50}
+
+14:13:50.221 response time in milliseconds: 445
+1 &lt; 200
+1 &lt; Date: Tue, 02 Dec 2025 19:13:50 GMT
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; access-control-allow-origin: *
+1 &lt; etag: W/&quot;12c-qh6raI/EWS3a5DDlu8tTdvjmcN0&quot;
+1 &lt; x-powered-by: Express
+1 &lt; cf-cache-status: DYNAMIC
+1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
+1 &lt; Server-Timing: cfCacheStatus;desc=&quot;DYNAMIC&quot;
+1 &lt; Server-Timing: cfEdge;dur=5,cfOrigin;dur=226
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=Gj%2BaWoLJbGjPjBZ7SdO9AKQFVznmbpdGzFyPQVHnL9HwqfSemmBnWxZPmTVG0SWiKWwazyuS6Tdo7CwwEow%2F0NMGQn9zl73pAG4irUHvrf8%3D&quot;}]}
+1 &lt; Server: cloudflare
+1 &lt; CF-RAY: 9a7d24d09d96a671-MIA
+1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+{&quot;address&quot;:{&quot;geolocation&quot;:{&quot;lat&quot;:&quot;20.1677&quot;,&quot;long&quot;:&quot;-10.6789&quot;},&quot;city&quot;:&quot;el paso&quot;,&quot;street&quot;:&quot;prospect st&quot;,&quot;number&quot;:124,&quot;zipcode&quot;:&quot;12346-0456&quot;},&quot;id&quot;:6,&quot;email&quot;:&quot;david_r@gmail.com&quot;,&quot;username&quot;:&quot;david_r&quot;,&quot;password&quot;:&quot;3478*#54&quot;,&quot;name&quot;:{&quot;firstname&quot;:&quot;david&quot;,&quot;lastname&quot;:&quot;russell&quot;},&quot;phone&quot;:&quot;1-678-345-9856&quot;,&quot;__v&quot;:0}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.128">
+      <div class="step-ref failed">128</div>
+      
+      <div class="step-cell failed">
+        <span>Then</span>&nbsp;<span>status 400</span>
+      </div>
+    </div>
+    <div class="time-cell failed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.128">14:13:50.222 classpath:examples/users/users.feature:128
+Then status 400
+status code was: 200, expected: 400, response time in milliseconds: 445, url: https://fakestoreapi.com/users/6, response: 
+{&quot;address&quot;:{&quot;geolocation&quot;:{&quot;lat&quot;:&quot;20.1677&quot;,&quot;long&quot;:&quot;-10.6789&quot;},&quot;city&quot;:&quot;el paso&quot;,&quot;street&quot;:&quot;prospect st&quot;,&quot;number&quot;:124,&quot;zipcode&quot;:&quot;12346-0456&quot;},&quot;id&quot;:6,&quot;email&quot;:&quot;david_r@gmail.com&quot;,&quot;username&quot;:&quot;david_r&quot;,&quot;password&quot;:&quot;3478*#54&quot;,&quot;name&quot;:{&quot;firstname&quot;:&quot;david&quot;,&quot;lastname&quot;:&quot;russell&quot;},&quot;phone&quot;:&quot;1-678-345-9856&quot;,&quot;__v&quot;:0}
+classpath:examples/users/users.feature:128
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.129">
+      <div class="step-ref skipped">129</div>
+      
+      <div class="step-cell skipped">
+        <span>And</span>&nbsp;<span>print response</span>
+      </div>
+    </div>
+    <div class="time-cell skipped">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+

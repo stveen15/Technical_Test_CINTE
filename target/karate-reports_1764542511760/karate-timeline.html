@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"examples\/products\/products[1:7]","start":1764542206235,"end":1764542206919,"title":"examples\/products\/products[1:7] 17:36:46.235-17:36:46.919 Get all ids, an post new id with an id already create."},{"id":2,"group":1,"content":"examples\/products\/products[2:24]","start":1764542206924,"end":1764542207572,"title":"examples\/products\/products[2:24] 17:36:46.924-17:36:47.572 Post a new id with a external JSON."},{"id":3,"group":1,"content":"examples\/products\/products[3:50]","start":1764542207577,"end":1764542208231,"title":"examples\/products\/products[3:50] 17:36:47.577-17:36:48.231 Update data with put an patch"},{"id":4,"group":1,"content":"examples\/products\/products[4:75]","start":1764542208236,"end":1764542208558,"title":"examples\/products\/products[4:75] 17:36:48.236-17:36:48.558 Detele product already created"},{"id":5,"group":1,"content":"examples\/products\/products[5:82]","start":1764542208563,"end":1764542208875,"title":"examples\/products\/products[5:82] 17:36:48.563-17:36:48.875 Validate data type"},{"id":6,"group":1,"content":"examples\/products\/products[6.1:101]","start":1764542208879,"end":1764542209215,"title":"examples\/products\/products[6.1:101] 17:36:48.879-17:36:49.215 Get a product with a no-existent id"},{"id":7,"group":1,"content":"examples\/products\/products[6.2:102]","start":1764542209220,"end":1764542209556,"title":"examples\/products\/products[6.2:102] 17:36:49.220-17:36:49.556 Get a product with a no-existent id"},{"id":8,"group":1,"content":"examples\/products\/products[6.3:103]","start":1764542209560,"end":1764542209883,"title":"examples\/products\/products[6.3:103] 17:36:49.560-17:36:49.883 Get a product with a no-existent id"},{"id":9,"group":1,"content":"examples\/products\/products[6.4:104]","start":1764542209888,"end":1764542210224,"title":"examples\/products\/products[6.4:104] 17:36:49.888-17:36:50.224 Get a product with a no-existent id"},{"id":10,"group":1,"content":"examples\/products\/products[7:106]","start":1764542210232,"end":1764542210548,"title":"examples\/products\/products[7:106] 17:36:50.232-17:36:50.548 try to delete a id non-existent"},{"id":11,"group":1,"content":"examples\/products\/products[8:112]","start":1764542210552,"end":1764542210886,"title":"examples\/products\/products[8:112] 17:36:50.552-17:36:50.886 Validate data type"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

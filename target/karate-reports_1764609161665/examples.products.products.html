@@ -1,0 +1,4905 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="stylesheet" href="res/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="res/karate-report.css" type="text/css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <script type="text/javascript" src="res/jquery.min.js"></script>
+    <script type="text/javascript" src="res/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="res/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="res/bootstrap.min.js"></script>
+    <script type="text/javascript" src="res/karate-report.js"></script>
+    <script type="text/javascript" src="res/Resemble.js"></script>
+    <script>
+!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
+  api_host:'https://app.posthog.com',
+  persistence:'localStorage',
+  autocapture:false,
+  capture_pageview:false,
+  api_transport:'sendBeacon',
+  loaded: function(posthog) { 
+    posthog.capture("report_feature",{distinct_id:"ff60b1c5-4bda-48a4-a199-c14f9777ecfd",karate_version:"1.4.1",karate_meta:null});
+  }
+});
+</script>
+
+    <title>examples.products.products</title>
+  </head>
+  <body>
+    <div id="root-container">
+      <div id="leftnav">
+        
+        <div>
+  <div class="nav-logo">
+    <a href="https://karatelabs.io">
+      <img src="karate-labs-logo-ring.svg" alt="Karate Labs"/>
+    </a>
+    <div class="nav-count">
+      <div id="nav-pass" class="bg-success">13</div>
+      <div id="nav-fail" class="bg-danger">1</div>
+    </div>
+  </div>
+  <div id="nav-env">
+    <div></div>
+  </div>
+  <div id="nav-type">
+    <div>Scenarios</div>
+  </div>
+  <div id="nav-date">
+    <div>2025-12-01 12:12:19 p. m.</div>
+  </div>
+</div>
+
+        <div class="nav-container">
+          <div class="nav-item passed">
+            <a href="#[1:7]"><span>[1:7]</span> <span>Get all ids, an post new id with an id already create.</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[2:24]"><span>[2:24]</span> <span>Post a new id with a external JSON.</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[3:50]"><span>[3:50]</span> <span>Update data with put an patch</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[4:75]"><span>[4:75]</span> <span>Detele product already created</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[5:82]"><span>[5:82]</span> <span>Validate data type</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[6.1:101]"><span>[6.1:101]</span> <span>Get a product with a no-existent id</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[6.2:102]"><span>[6.2:102]</span> <span>Get a product with a no-existent id</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[6.3:103]"><span>[6.3:103]</span> <span>Get a product with a no-existent id</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[6.4:104]"><span>[6.4:104]</span> <span>Get a product with a no-existent id</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[7:106]"><span>[7:106]</span> <span>try to delete a id non-existent</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[8:113]"><span>[8:113]</span> <span>Validate data type</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[9:121]"><span>[9:121]</span> <span>Validate miss fields</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[10:129]"><span>[10:129]</span> <span>Create new product with non-existent field</span></a>
+          </div>
+          <div class="nav-item failed">
+            <a href="#[11:145]"><span>[11:145]</span> <span>range in price very high</span></a>
+          </div>
+        </div>
+      </div>
+      <div id="content">
+        <div class="page-heading alert alert-primary">
+          <a href="karate-summary.html">Summary</a><span class="feature-label">|</span>
+          <a href="karate-tags.html">Tags</a><span class="feature-label">|</span>
+          <span class="feature-label">Feature:</span>
+          <span class="feature-path">examples/products/products.feature</span><span class="feature-label">|</span>
+          <span class="feature-name">Teste with Products Endpoint.</span>
+          <span class="feature-description"></span>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[1:7]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[1:7]</span>
+                <span class="scenario-name">Get all ids, an post new id with an id already create.</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>685</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[1:7]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[1:7]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;https://fakestoreapi.com&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.4">12:12:13.352 karate.env system property was: null 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.8">
+      <div class="step-ref passed">8</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;products&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.9">
+      <div class="step-ref passed">9</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method get</span>
+      </div>
+    </div>
+    <div class="time-cell passed">329</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.9">12:12:13.354 request:
+1 &gt; GET https://fakestoreapi.com/products
+1 &gt; Host: fakestoreapi.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.17)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+12:12:13.680 response time in milliseconds: 324
+1 &lt; 200
+1 &lt; Date: Mon, 01 Dec 2025 17:12:13 GMT
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; access-control-allow-origin: *
+1 &lt; etag: W/&quot;2990-lZ2o94A2EDKiYW3/6/3oI74HHkw&quot;
+1 &lt; x-powered-by: Express
+1 &lt; cf-cache-status: DYNAMIC
+1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
+1 &lt; Server-Timing: cfCacheStatus;desc=&quot;DYNAMIC&quot;
+1 &lt; Server-Timing: cfEdge;dur=7,cfOrigin;dur=125
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=Qk7ks1AHnLrFMgAYueIDT54a9pJTcjWEFiUuzwsbveeOr7MFcs0rVYKBf7%2FiJvjCTtmuiWABPineBEkCO5%2F5CgXViVTmKq9k02BWfJNX%2FrY%3D&quot;}]}
+1 &lt; Server: cloudflare
+1 &lt; CF-RAY: 9a74354d8bc8e0f4-MIA
+1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+[{&quot;id&quot;:1,&quot;title&quot;:&quot;Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops&quot;,&quot;price&quot;:109.95,&quot;description&quot;:&quot;Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday&quot;,&quot;category&quot;:&quot;men&#39;s clothing&quot;,&quot;image&quot;:&quot;https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png&quot;,&quot;rating&quot;:{&quot;rate&quot;:3.9,&quot;count&quot;:120}},{&quot;id&quot;:2,&quot;title&quot;:&quot;Mens Casual Premium Slim Fit T-Shirts &quot;,&quot;price&quot;:22.3,&quot;description&quot;:&quot;Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight &amp; soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.&quot;,&quot;category&quot;:&quot;men&#39;s clothing&quot;,&quot;image&quot;:&quot;https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_t.png&quot;,&quot;rating&quot;:{&quot;rate&quot;:4.1,&quot;count&quot;:259}},{&quot;id&quot;:3,&quot;title&quot;:&quot;Mens Cotton Jacket&quot;,&quot;price&quot;:55.99,&quot;description&quot;:&quot;great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.&quot;,&quot;category&quot;:&quot;men&#39;s clothing&quot;,&quot;image&quot;:&quot;https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_t.png&quot;,&quot;rating&quot;:{&quot;rate&quot;:4.7,&quot;count&quot;:500}},{&quot;id&quot;:4,&quot;title&quot;:&quot;Mens Casual Slim Fit&quot;,&quot;price&quot;:15.99,&quot;description&quot;:&quot;The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.&quot;,&quot;category&quot;:&quot;men&#39;s clothing&quot;,&quot;image&quot;:&quot;https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_t.png&quot;,&quot;rating&quot;:{&quot;rate&quot;:2.1,&quot;count&quot;:430}},{&quot;id&quot;:5,&quot;title&quot;:&quot;John Hardy Women&#39;s Legends Naga Gold &amp; Silver Dragon Station Chain Bracelet&quot;,&quot;price&quot;:695,&quot;description&quot;:&quot;From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean&#39;s pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.&quot;,&quot;category&quot;:&quot;jewelery&quot;,&quot;image&quot;:&quot;https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_t.png&quot;,&quot;rating&quot;:{&quot;rate&quot;:4.6,&quot;count&quot;:400}},{&quot;id&quot;:6,&quot;title&quot;:&quot;Solid Gold Petite Micropave &quot;,&quot;price&quot;:168,&quot;description&quot;:&quot;Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.&quot;,&quot;category&quot;:&quot;jewelery&quot;,&quot;image&quot;:&quot;https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_t.png&quot;,&quot;rating&quot;:{&quot;rate&quot;:3.9,&quot;count&quot;:70}},{&quot;id&quot;:7,&quot;title&quot;:&quot;White Gold Plated Princess&quot;,&quot;price&quot;:9.99,&quot;description&quot;:&quot;Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine&#39;s Day...&quot;,&quot;category&quot;:&quot;jewelery&quot;,&quot;image&quot;:&quot;https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_t.png&quot;,&quot;rating&quot;:{&quot;rate&quot;:3,&quot;count&quot;:400}},{&quot;id&quot;:8,&quot;title&quot;:&quot;Pierced Owl Rose Gold Plated Stainless Steel Double&quot;,&quot;price&quot;:10.99,&quot;description&quot;:&quot;Rose Gold Plated Double Flared Tunnel Plug Earrings. Made of 316L Stainless Steel&quot;,&quot;category&quot;:&quot;jewelery&quot;,&quot;image&quot;:&quot;https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_t.png&quot;,&quot;rating&quot;:{&quot;rate&quot;:1.9,&quot;count&quot;:100}},{&quot;id&quot;:9,&quot;title&quot;:&quot;WD 2TB Elements Portable External Hard Drive - USB 3.0 &quot;,&quot;price&quot;:64,&quot;description&quot;:&quot;USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve PC Performance High Capacity; Compatibility Formatted NTFS for Windows 10, Windows 8.1, Windows 7; Reformatting may be required for other operating systems; Compatibility may vary depending on user’s hardware configuration and operating system&quot;,&quot;category&quot;:&quot;electronics&quot;,&quot;image&quot;:&quot;https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_t.png&quot;,&quot;rating&quot;:{&quot;rate&quot;:3.3,&quot;count&quot;:203}},{&quot;id&quot;:10,&quot;title&quot;:&quot;SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s&quot;,&quot;price&quot;:109,&quot;description&quot;:&quot;Easy upgrade for faster boot up, shutdown, application load and response (As compared to 5400 RPM SATA 2.5” hard drive; Based on published specifications and internal benchmarking tests using PCMark vantage scores) Boosts burst write performance, making it ideal for typical PC workloads The perfect balance of performance and reliability Read/write speeds of up to 535MB/s/450MB/s (Based on internal testing; Performance may vary depending upon drive capacity, host device, OS and application.)&quot;,&quot;category&quot;:&quot;electronics&quot;,&quot;image&quot;:&quot;https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_t.png&quot;,&quot;rating&quot;:{&quot;rate&quot;:2.9,&quot;count&quot;:470}},{&quot;id&quot;:11,&quot;title&quot;:&quot;Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5&quot;,&quot;price&quot;:109,&quot;description&quot;:&quot;3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks. Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking &amp; Correction) to provide the optimized performance and enhanced reliability.&quot;,&quot;category&quot;:&quot;electronics&quot;,&quot;image&quot;:&quot;https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_t.png&quot;,&quot;rating&quot;:{&quot;rate&quot;:4.8,&quot;count&quot;:319}},{&quot;id&quot;:12,&quot;title&quot;:&quot;WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive&quot;,&quot;price&quot;:114,&quot;description&quot;:&quot;Expand your PS4 gaming experience, Play anywhere Fast and easy, setup Sleek design with high capacity, 3-year manufacturer&#39;s limited warranty&quot;,&quot;category&quot;:&quot;electronics&quot;,&quot;image&quot;:&quot;https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_t.png&quot;,&quot;rating&quot;:{&quot;rate&quot;:4.8,&quot;count&quot;:400}},{&quot;id&quot;:13,&quot;title&quot;:&quot;Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin&quot;,&quot;price&quot;:599,&quot;description&quot;:&quot;21. 5 inches Full HD (1920 x 1080) widescreen IPS display And Radeon free Sync technology. No compatibility for VESA Mount Refresh Rate: 75Hz - Using HDMI port Zero-frame design | ultra-thin | 4ms response time | IPS panel Aspect ratio - 16: 9. Color Supported - 16. 7 million colors. Brightness - 250 nit Tilt angle -5 degree to 15 degree. Horizontal viewing angle-178 degree. Vertical viewing angle-178 degree 75 hertz&quot;,&quot;category&quot;:&quot;electronics&quot;,&quot;image&quot;:&quot;https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_t.png&quot;,&quot;rating&quot;:{&quot;rate&quot;:2.9,&quot;count&quot;:250}},{&quot;id&quot;:14,&quot;title&quot;:&quot;Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED &quot;,&quot;price&quot;:999.99,&quot;description&quot;:&quot;49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side QUANTUM DOT (QLED) TECHNOLOGY, HDR support and factory calibration provides stunningly realistic and accurate color and contrast 144HZ HIGH REFRESH RATE and 1ms ultra fast response time work to eliminate motion blur, ghosting, and reduce input lag&quot;,&quot;category&quot;:&quot;electronics&quot;,&quot;image&quot;:&quot;https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_t.png&quot;,&quot;rating&quot;:{&quot;rate&quot;:2.2,&quot;count&quot;:140}},{&quot;id&quot;:15,&quot;title&quot;:&quot;BIYLACLESEN Women&#39;s 3-in-1 Snowboard Jacket Winter Coats&quot;,&quot;price&quot;:56.99,&quot;description&quot;:&quot;Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece. Detachable Functional Liner: Skin Friendly, Lightweigt and Warm.Stand Collar Liner jacket, keep you warm in cold weather. Zippered Pockets: 2 Zippered Hand Pockets, 2 Zippered Pockets on Chest (enough to keep cards or keys)and 1 Hidden Pocket Inside.Zippered Hand Pockets and Hidden Pocket keep your things secure. Humanized Design: Adjustable and Detachable Hood and Adjustable cuff to prevent the wind and water,for a comfortable fit. 3 in 1 Detachable Design provide more convenience, you can separate the coat and inner as needed, or wear it together. It is suitable for different season and help you adapt to different climates&quot;,&quot;category&quot;:&quot;women&#39;s clothing&quot;,&quot;image&quot;:&quot;https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_t.png&quot;,&quot;rating&quot;:{&quot;rate&quot;:2.6,&quot;count&quot;:235}},{&quot;id&quot;:16,&quot;title&quot;:&quot;Lock and Love Women&#39;s Removable Hooded Faux Leather Moto Biker Jacket&quot;,&quot;price&quot;:29.95,&quot;description&quot;:&quot;100% POLYURETHANE(shell) 100% POLYESTER(lining) 75% POLYESTER 25% COTTON (SWEATER), Faux leather material for style and comfort / 2 pockets of front, 2-For-One Hooded denim style faux leather jacket, Button detail on waist / Detail stitching at sides, HAND WASH ONLY / DO NOT BLEACH / LINE DRY / DO NOT IRON&quot;,&quot;category&quot;:&quot;women&#39;s clothing&quot;,&quot;image&quot;:&quot;https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_t.png&quot;,&quot;rating&quot;:{&quot;rate&quot;:2.9,&quot;count&quot;:340}},{&quot;id&quot;:17,&quot;title&quot;:&quot;Rain Jacket Women Windbreaker Striped Climbing Raincoats&quot;,&quot;price&quot;:39.99,&quot;description&quot;:&quot;Lightweight perfet for trip or casual wear---Long sleeve with hooded, adjustable drawstring waist design. Button and zipper front closure raincoat, fully stripes Lined and The Raincoat has 2 side pockets are a good size to hold all kinds of things, it covers the hips, and the hood is generous but doesn&#39;t overdo it.Attached Cotton Lined Hood with Adjustable Drawstrings give it a real styled look.&quot;,&quot;category&quot;:&quot;women&#39;s clothing&quot;,&quot;image&quot;:&quot;https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2t.png&quot;,&quot;rating&quot;:{&quot;rate&quot;:3.8,&quot;count&quot;:679}},{&quot;id&quot;:18,&quot;title&quot;:&quot;MBJ Women&#39;s Solid Short Sleeve Boat Neck V &quot;,&quot;price&quot;:9.85,&quot;description&quot;:&quot;95% RAYON 5% SPANDEX, Made in USA or Imported, Do Not Bleach, Lightweight fabric with great stretch for comfort, Ribbed on sleeves and neckline / Double stitching on bottom hem&quot;,&quot;category&quot;:&quot;women&#39;s clothing&quot;,&quot;image&quot;:&quot;https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_t.png&quot;,&quot;rating&quot;:{&quot;rate&quot;:4.7,&quot;count&quot;:130}},{&quot;id&quot;:19,&quot;title&quot;:&quot;Opna Women&#39;s Short Sleeve Moisture&quot;,&quot;price&quot;:7.95,&quot;description&quot;:&quot;100% Polyester, Machine wash, 100% cationic polyester interlock, Machine Wash &amp; Pre Shrunk for a Great Fit, Lightweight, roomy and highly breathable with moisture wicking fabric which helps to keep moisture away, Soft Lightweight Fabric with comfortable V-neck collar and a slimmer fit, delivers a sleek, more feminine silhouette and Added Comfort&quot;,&quot;category&quot;:&quot;women&#39;s clothing&quot;,&quot;image&quot;:&quot;https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_t.png&quot;,&quot;rating&quot;:{&quot;rate&quot;:4.5,&quot;count&quot;:146}},{&quot;id&quot;:20,&quot;title&quot;:&quot;DANVOUY Womens T Shirt Casual Cotton Short&quot;,&quot;price&quot;:12.99,&quot;description&quot;:&quot;95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch., Occasion: Casual/Office/Beach/School/Home/Street. Season: Spring,Summer,Autumn,Winter.&quot;,&quot;category&quot;:&quot;women&#39;s clothing&quot;,&quot;image&quot;:&quot;https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_t.png&quot;,&quot;rating&quot;:{&quot;rate&quot;:3.6,&quot;count&quot;:145}}]
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.10">
+      <div class="step-ref passed">10</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.11">
+      <div class="step-ref passed">11</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>print response</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.11">12:12:13.683 [print] [
+  {
+    &quot;id&quot;: 1,
+    &quot;title&quot;: &quot;Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops&quot;,
+    &quot;price&quot;: 109.95,
+    &quot;description&quot;: &quot;Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday&quot;,
+    &quot;category&quot;: &quot;men&#39;s clothing&quot;,
+    &quot;image&quot;: &quot;https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png&quot;,
+    &quot;rating&quot;: {
+      &quot;rate&quot;: 3.9,
+      &quot;count&quot;: 120
+    }
+  },
+  {
+    &quot;id&quot;: 2,
+    &quot;title&quot;: &quot;Mens Casual Premium Slim Fit T-Shirts &quot;,
+    &quot;price&quot;: 22.3,
+    &quot;description&quot;: &quot;Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight &amp; soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.&quot;,
+    &quot;category&quot;: &quot;men&#39;s clothing&quot;,
+    &quot;image&quot;: &quot;https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_t.png&quot;,
+    &quot;rating&quot;: {
+      &quot;rate&quot;: 4.1,
+      &quot;count&quot;: 259
+    }
+  },
+  {
+    &quot;id&quot;: 3,
+    &quot;title&quot;: &quot;Mens Cotton Jacket&quot;,
+    &quot;price&quot;: 55.99,
+    &quot;description&quot;: &quot;great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.&quot;,
+    &quot;category&quot;: &quot;men&#39;s clothing&quot;,
+    &quot;image&quot;: &quot;https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_t.png&quot;,
+    &quot;rating&quot;: {
+      &quot;rate&quot;: 4.7,
+      &quot;count&quot;: 500
+    }
+  },
+  {
+    &quot;id&quot;: 4,
+    &quot;title&quot;: &quot;Mens Casual Slim Fit&quot;,
+    &quot;price&quot;: 15.99,
+    &quot;description&quot;: &quot;The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.&quot;,
+    &quot;category&quot;: &quot;men&#39;s clothing&quot;,
+    &quot;image&quot;: &quot;https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_t.png&quot;,
+    &quot;rating&quot;: {
+      &quot;rate&quot;: 2.1,
+      &quot;count&quot;: 430
+    }
+  },
+  {
+    &quot;id&quot;: 5,
+    &quot;title&quot;: &quot;John Hardy Women&#39;s Legends Naga Gold &amp; Silver Dragon Station Chain Bracelet&quot;,
+    &quot;price&quot;: 695,
+    &quot;description&quot;: &quot;From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean&#39;s pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.&quot;,
+    &quot;category&quot;: &quot;jewelery&quot;,
+    &quot;image&quot;: &quot;https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_t.png&quot;,
+    &quot;rating&quot;: {
+      &quot;rate&quot;: 4.6,
+      &quot;count&quot;: 400
+    }
+  },
+  {
+    &quot;id&quot;: 6,
+    &quot;title&quot;: &quot;Solid Gold Petite Micropave &quot;,
+    &quot;price&quot;: 168,
+    &quot;description&quot;: &quot;Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.&quot;,
+    &quot;category&quot;: &quot;jewelery&quot;,
+    &quot;image&quot;: &quot;https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_t.png&quot;,
+    &quot;rating&quot;: {
+      &quot;rate&quot;: 3.9,
+      &quot;count&quot;: 70
+    }
+  },
+  {
+    &quot;id&quot;: 7,
+    &quot;title&quot;: &quot;White Gold Plated Princess&quot;,
+    &quot;price&quot;: 9.99,
+    &quot;description&quot;: &quot;Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine&#39;s Day...&quot;,
+    &quot;category&quot;: &quot;jewelery&quot;,
+    &quot;image&quot;: &quot;https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_t.png&quot;,
+    &quot;rating&quot;: {
+      &quot;rate&quot;: 3,
+      &quot;count&quot;: 400
+    }
+  },
+  {
+    &quot;id&quot;: 8,
+    &quot;title&quot;: &quot;Pierced Owl Rose Gold Plated Stainless Steel Double&quot;,
+    &quot;price&quot;: 10.99,
+    &quot;description&quot;: &quot;Rose Gold Plated Double Flared Tunnel Plug Earrings. Made of 316L Stainless Steel&quot;,
+    &quot;category&quot;: &quot;jewelery&quot;,
+    &quot;image&quot;: &quot;https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_t.png&quot;,
+    &quot;rating&quot;: {
+      &quot;rate&quot;: 1.9,
+      &quot;count&quot;: 100
+    }
+  },
+  {
+    &quot;id&quot;: 9,
+    &quot;title&quot;: &quot;WD 2TB Elements Portable External Hard Drive - USB 3.0 &quot;,
+    &quot;price&quot;: 64,
+    &quot;description&quot;: &quot;USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve PC Performance High Capacity; Compatibility Formatted NTFS for Windows 10, Windows 8.1, Windows 7; Reformatting may be required for other operating systems; Compatibility may vary depending on user\u2019s hardware configuration and operating system&quot;,
+    &quot;category&quot;: &quot;electronics&quot;,
+    &quot;image&quot;: &quot;https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_t.png&quot;,
+    &quot;rating&quot;: {
+      &quot;rate&quot;: 3.3,
+      &quot;count&quot;: 203
+    }
+  },
+  {
+    &quot;id&quot;: 10,
+    &quot;title&quot;: &quot;SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s&quot;,
+    &quot;price&quot;: 109,
+    &quot;description&quot;: &quot;Easy upgrade for faster boot up, shutdown, application load and response (As compared to 5400 RPM SATA 2.5\u201D hard drive; Based on published specifications and internal benchmarking tests using PCMark vantage scores) Boosts burst write performance, making it ideal for typical PC workloads The perfect balance of performance and reliability Read/write speeds of up to 535MB/s/450MB/s (Based on internal testing; Performance may vary depending upon drive capacity, host device, OS and application.)&quot;,
+    &quot;category&quot;: &quot;electronics&quot;,
+    &quot;image&quot;: &quot;https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_t.png&quot;,
+    &quot;rating&quot;: {
+      &quot;rate&quot;: 2.9,
+      &quot;count&quot;: 470
+    }
+  },
+  {
+    &quot;id&quot;: 11,
+    &quot;title&quot;: &quot;Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5&quot;,
+    &quot;price&quot;: 109,
+    &quot;description&quot;: &quot;3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks. Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking &amp; Correction) to provide the optimized performance and enhanced reliability.&quot;,
+    &quot;category&quot;: &quot;electronics&quot;,
+    &quot;image&quot;: &quot;https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_t.png&quot;,
+    &quot;rating&quot;: {
+      &quot;rate&quot;: 4.8,
+      &quot;count&quot;: 319
+    }
+  },
+  {
+    &quot;id&quot;: 12,
+    &quot;title&quot;: &quot;WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive&quot;,
+    &quot;price&quot;: 114,
+    &quot;description&quot;: &quot;Expand your PS4 gaming experience, Play anywhere Fast and easy, setup Sleek design with high capacity, 3-year manufacturer&#39;s limited warranty&quot;,
+    &quot;category&quot;: &quot;electronics&quot;,
+    &quot;image&quot;: &quot;https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_t.png&quot;,
+    &quot;rating&quot;: {
+      &quot;rate&quot;: 4.8,
+      &quot;count&quot;: 400
+    }
+  },
+  {
+    &quot;id&quot;: 13,
+    &quot;title&quot;: &quot;Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin&quot;,
+    &quot;price&quot;: 599,
+    &quot;description&quot;: &quot;21. 5 inches Full HD (1920 x 1080) widescreen IPS display And Radeon free Sync technology. No compatibility for VESA Mount Refresh Rate: 75Hz - Using HDMI port Zero-frame design | ultra-thin | 4ms response time | IPS panel Aspect ratio - 16: 9. Color Supported - 16. 7 million colors. Brightness - 250 nit Tilt angle -5 degree to 15 degree. Horizontal viewing angle-178 degree. Vertical viewing angle-178 degree 75 hertz&quot;,
+    &quot;category&quot;: &quot;electronics&quot;,
+    &quot;image&quot;: &quot;https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_t.png&quot;,
+    &quot;rating&quot;: {
+      &quot;rate&quot;: 2.9,
+      &quot;count&quot;: 250
+    }
+  },
+  {
+    &quot;id&quot;: 14,
+    &quot;title&quot;: &quot;Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) \u2013 Super Ultrawide Screen QLED &quot;,
+    &quot;price&quot;: 999.99,
+    &quot;description&quot;: &quot;49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side QUANTUM DOT (QLED) TECHNOLOGY, HDR support and factory calibration provides stunningly realistic and accurate color and contrast 144HZ HIGH REFRESH RATE and 1ms ultra fast response time work to eliminate motion blur, ghosting, and reduce input lag&quot;,
+    &quot;category&quot;: &quot;electronics&quot;,
+    &quot;image&quot;: &quot;https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_t.png&quot;,
+    &quot;rating&quot;: {
+      &quot;rate&quot;: 2.2,
+      &quot;count&quot;: 140
+    }
+  },
+  {
+    &quot;id&quot;: 15,
+    &quot;title&quot;: &quot;BIYLACLESEN Women&#39;s 3-in-1 Snowboard Jacket Winter Coats&quot;,
+    &quot;price&quot;: 56.99,
+    &quot;description&quot;: &quot;Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece. Detachable Functional Liner: Skin Friendly, Lightweigt and Warm.Stand Collar Liner jacket, keep you warm in cold weather. Zippered Pockets: 2 Zippered Hand Pockets, 2 Zippered Pockets on Chest (enough to keep cards or keys)and 1 Hidden Pocket Inside.Zippered Hand Pockets and Hidden Pocket keep your things secure. Humanized Design: Adjustable and Detachable Hood and Adjustable cuff to prevent the wind and water,for a comfortable fit. 3 in 1 Detachable Design provide more convenience, you can separate the coat and inner as needed, or wear it together. It is suitable for different season and help you adapt to different climates&quot;,
+    &quot;category&quot;: &quot;women&#39;s clothing&quot;,
+    &quot;image&quot;: &quot;https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_t.png&quot;,
+    &quot;rating&quot;: {
+      &quot;rate&quot;: 2.6,
+      &quot;count&quot;: 235
+    }
+  },
+  {
+    &quot;id&quot;: 16,
+    &quot;title&quot;: &quot;Lock and Love Women&#39;s Removable Hooded Faux Leather Moto Biker Jacket&quot;,
+    &quot;price&quot;: 29.95,
+    &quot;description&quot;: &quot;100% POLYURETHANE(shell) 100% POLYESTER(lining) 75% POLYESTER 25% COTTON (SWEATER), Faux leather material for style and comfort / 2 pockets of front, 2-For-One Hooded denim style faux leather jacket, Button detail on waist / Detail stitching at sides, HAND WASH ONLY / DO NOT BLEACH / LINE DRY / DO NOT IRON&quot;,
+    &quot;category&quot;: &quot;women&#39;s clothing&quot;,
+    &quot;image&quot;: &quot;https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_t.png&quot;,
+    &quot;rating&quot;: {
+      &quot;rate&quot;: 2.9,
+      &quot;count&quot;: 340
+    }
+  },
+  {
+    &quot;id&quot;: 17,
+    &quot;title&quot;: &quot;Rain Jacket Women Windbreaker Striped Climbing Raincoats&quot;,
+    &quot;price&quot;: 39.99,
+    &quot;description&quot;: &quot;Lightweight perfet for trip or casual wear---Long sleeve with hooded, adjustable drawstring waist design. Button and zipper front closure raincoat, fully stripes Lined and The Raincoat has 2 side pockets are a good size to hold all kinds of things, it covers the hips, and the hood is generous but doesn&#39;t overdo it.Attached Cotton Lined Hood with Adjustable Drawstrings give it a real styled look.&quot;,
+    &quot;category&quot;: &quot;women&#39;s clothing&quot;,
+    &quot;image&quot;: &quot;https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2t.png&quot;,
+    &quot;rating&quot;: {
+      &quot;rate&quot;: 3.8,
+      &quot;count&quot;: 679
+    }
+  },
+  {
+    &quot;id&quot;: 18,
+    &quot;title&quot;: &quot;MBJ Women&#39;s Solid Short Sleeve Boat Neck V &quot;,
+    &quot;price&quot;: 9.85,
+    &quot;description&quot;: &quot;95% RAYON 5% SPANDEX, Made in USA or Imported, Do Not Bleach, Lightweight fabric with great stretch for comfort, Ribbed on sleeves and neckline / Double stitching on bottom hem&quot;,
+    &quot;category&quot;: &quot;women&#39;s clothing&quot;,
+    &quot;image&quot;: &quot;https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_t.png&quot;,
+    &quot;rating&quot;: {
+      &quot;rate&quot;: 4.7,
+      &quot;count&quot;: 130
+    }
+  },
+  {
+    &quot;id&quot;: 19,
+    &quot;title&quot;: &quot;Opna Women&#39;s Short Sleeve Moisture&quot;,
+    &quot;price&quot;: 7.95,
+    &quot;description&quot;: &quot;100% Polyester, Machine wash, 100% cationic polyester interlock, Machine Wash &amp; Pre Shrunk for a Great Fit, Lightweight, roomy and highly breathable with moisture wicking fabric which helps to keep moisture away, Soft Lightweight Fabric with comfortable V-neck collar and a slimmer fit, delivers a sleek, more feminine silhouette and Added Comfort&quot;,
+    &quot;category&quot;: &quot;women&#39;s clothing&quot;,
+    &quot;image&quot;: &quot;https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_t.png&quot;,
+    &quot;rating&quot;: {
+      &quot;rate&quot;: 4.5,
+      &quot;count&quot;: 146
+    }
+  },
+  {
+    &quot;id&quot;: 20,
+    &quot;title&quot;: &quot;DANVOUY Womens T Shirt Casual Cotton Short&quot;,
+    &quot;price&quot;: 12.99,
+    &quot;description&quot;: &quot;95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch., Occasion: Casual/Office/Beach/School/Home/Street. Season: Spring,Summer,Autumn,Winter.&quot;,
+    &quot;category&quot;: &quot;women&#39;s clothing&quot;,
+    &quot;image&quot;: &quot;https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_t.png&quot;,
+    &quot;rating&quot;: {
+      &quot;rate&quot;: 3.6,
+      &quot;count&quot;: 145
+    }
+  }
+]
+ 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.12">
+      <div class="step-ref passed">12</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def product_id = response[1]</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.14">
+      <div class="step-ref passed">14</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>copy cheap_product = product_id</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.15">
+      <div class="step-ref passed">15</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>set cheap_product.title = &quot;Producto barato&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.16">
+      <div class="step-ref passed">16</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>set cheap_product.price = 50</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.17">
+      <div class="step-ref passed">17</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;products&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.18">
+      <div class="step-ref passed">18</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method post</span>
+      </div>
+    </div>
+    <div class="time-cell passed">351</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.18">12:12:13.686 request:
+2 &gt; POST https://fakestoreapi.com/products
+2 &gt; Host: fakestoreapi.com
+2 &gt; Connection: Keep-Alive
+2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.17)
+2 &gt; Accept-Encoding: gzip,deflate
+
+
+12:12:14.036 response time in milliseconds: 349
+2 &lt; 201
+2 &lt; Date: Mon, 01 Dec 2025 17:12:14 GMT
+2 &lt; Content-Type: application/json; charset=utf-8
+2 &lt; Content-Length: 9
+2 &lt; Connection: keep-alive
+2 &lt; access-control-allow-origin: *
+2 &lt; etag: W/&quot;9-YMkvF/wJa2P/mVmfWcyTuUjssI8&quot;
+2 &lt; x-powered-by: Express
+2 &lt; cf-cache-status: DYNAMIC
+2 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
+2 &lt; Server-Timing: cfCacheStatus;desc=&quot;DYNAMIC&quot;
+2 &lt; Server-Timing: cfEdge;dur=5,cfOrigin;dur=126
+2 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=mbgYQNRjlR9tySW%2BvNsb2l%2B0xd%2FqNP6fX3oLXPqzkNauselrN5lRLZtWDmn0%2FLSzW7v9Kp7P3x5AUAM2essN7WdxxDoRMbBCHPD10dJk7yY%3D&quot;}]}
+2 &lt; Server: cloudflare
+2 &lt; CF-RAY: 9a74354fbcd5a698-MIA
+2 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+{&quot;id&quot;:21}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.19">
+      <div class="step-ref passed">19</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 201</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment">#Fake Store Api do not support preview new items.</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.21">
+      <div class="step-ref passed">21</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>print response</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.21">12:12:14.036 [print] {
+  &quot;id&quot;: 21
+}
+ 
+</div>   
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[2:24]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[2:24]</span>
+                <span class="scenario-name">Post a new id with a external JSON.</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>655</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[2:24]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[2:24]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;https://fakestoreapi.com&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.4">12:12:14.041 karate.env system property was: null 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.25">
+      <div class="step-ref passed">25</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def external_json_product = read(&#39;classpath:examples/Data/productsbody.json&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.26">
+      <div class="step-ref passed">26</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>set external_json_product.title = &quot;Nuevo producto creado&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.27">
+      <div class="step-ref passed">27</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>set external_json_product.price = 75000</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.28">
+      <div class="step-ref passed">28</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>set external_json_product.description = &quot;Nueva descripción creada&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.29">
+      <div class="step-ref passed">29</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>set external_json_product.category = &quot;Nueva categoria&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.30">
+      <div class="step-ref passed">30</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>set external_json_product.image = &quot;https://img.freepik.com/vector-premium/icono-diseno-color-tiempo-prueba-movil_362714-11841.jpg?semt=ais_hybrid&amp;w=740&amp;q=80&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.31">
+      <div class="step-ref passed">31</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;products&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.32">
+      <div class="step-ref passed">32</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request external_json_product</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.33">
+      <div class="step-ref passed">33</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method post</span>
+      </div>
+    </div>
+    <div class="time-cell passed">339</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.33">12:12:14.045 request:
+1 &gt; POST https://fakestoreapi.com/products
+1 &gt; Content-Type: application/json; charset=UTF-8
+1 &gt; Content-Length: 254
+1 &gt; Host: fakestoreapi.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.17)
+1 &gt; Accept-Encoding: gzip,deflate
+{&quot;title&quot;:&quot;Nuevo producto creado&quot;,&quot;price&quot;:75000,&quot;description&quot;:&quot;Nueva descripción creada&quot;,&quot;category&quot;:&quot;Nueva categoria&quot;,&quot;image&quot;:&quot;https:\/\/img.freepik.com\/vector-premium\/icono-diseno-color-tiempo-prueba-movil_362714-11841.jpg?semt=ais_hybrid&amp;w=740&amp;q=80&quot;}
+
+12:12:14.383 response time in milliseconds: 338
+1 &lt; 201
+1 &lt; Date: Mon, 01 Dec 2025 17:12:14 GMT
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Content-Length: 258
+1 &lt; Connection: keep-alive
+1 &lt; access-control-allow-origin: *
+1 &lt; etag: W/&quot;102-rF04HfG/nSTiJ5nQVCV/HHSpvHQ&quot;
+1 &lt; x-powered-by: Express
+1 &lt; cf-cache-status: DYNAMIC
+1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
+1 &lt; Server-Timing: cfCacheStatus;desc=&quot;DYNAMIC&quot;
+1 &lt; Server-Timing: cfEdge;dur=4,cfOrigin;dur=125
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=hz%2FXSH%2BD8XQUEZQQDGTKlODatLaDpQ30qDUuzJ6Fo%2FcGdajgzrwlH68wgaE9pwCYyxPNJiDqP6smX6NOUUpyfpXV1hGzI6kcjexBvGYd3UY%3D&quot;}]}
+1 &lt; Server: cloudflare
+1 &lt; CF-RAY: 9a743551ea99d965-MIA
+1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+{&quot;id&quot;:21,&quot;title&quot;:&quot;Nuevo producto creado&quot;,&quot;price&quot;:75000,&quot;description&quot;:&quot;Nueva descripción creada&quot;,&quot;image&quot;:&quot;https://img.freepik.com/vector-premium/icono-diseno-color-tiempo-prueba-movil_362714-11841.jpg?semt=ais_hybrid&amp;w=740&amp;q=80&quot;,&quot;category&quot;:&quot;Nueva categoria&quot;}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.34">
+      <div class="step-ref passed">34</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 201</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.35">
+      <div class="step-ref passed">35</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.title == &quot;Nuevo producto creado&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.36">
+      <div class="step-ref passed">36</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.price == 75000</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.37">
+      <div class="step-ref passed">37</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.description == &quot;Nueva descripción creada&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.38">
+      <div class="step-ref passed">38</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.category == &quot;Nueva categoria&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.39">
+      <div class="step-ref passed">39</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.image == &quot;https://img.freepik.com/vector-premium/icono-diseno-color-tiempo-prueba-movil_362714-11841.jpg?semt=ais_hybrid&amp;w=740&amp;q=80&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment">#Print new product correctly</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.41">
+      <div class="step-ref passed">41</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>print response</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.41">12:12:14.385 [print] {
+  &quot;id&quot;: 21,
+  &quot;title&quot;: &quot;Nuevo producto creado&quot;,
+  &quot;price&quot;: 75000,
+  &quot;description&quot;: &quot;Nueva descripción creada&quot;,
+  &quot;image&quot;: &quot;https://img.freepik.com/vector-premium/icono-diseno-color-tiempo-prueba-movil_362714-11841.jpg?semt=ais_hybrid&amp;w=740&amp;q=80&quot;,
+  &quot;category&quot;: &quot;Nueva categoria&quot;
+}
+ 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.42">
+      <div class="step-ref passed">42</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def new_product_created = response.id</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment">#But when it&#39;s try to get the data with the get method, the API do not show anything. This it because the data is not save at all</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.44">
+      <div class="step-ref passed">44</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;products&#39;, new_product_created</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.45">
+      <div class="step-ref passed">45</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method get</span>
+      </div>
+    </div>
+    <div class="time-cell passed">311</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.45">12:12:14.387 request:
+2 &gt; GET https://fakestoreapi.com/products/21
+2 &gt; Host: fakestoreapi.com
+2 &gt; Connection: Keep-Alive
+2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.17)
+2 &gt; Accept-Encoding: gzip,deflate
+
+
+12:12:14.696 response time in milliseconds: 309
+2 &lt; 200
+2 &lt; Date: Mon, 01 Dec 2025 17:12:14 GMT
+2 &lt; Content-Type: application/json; charset=utf-8
+2 &lt; Transfer-Encoding: chunked
+2 &lt; Connection: keep-alive
+2 &lt; access-control-allow-origin: *
+2 &lt; x-powered-by: Express
+2 &lt; cf-cache-status: DYNAMIC
+2 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
+2 &lt; Server-Timing: cfCacheStatus;desc=&quot;DYNAMIC&quot;
+2 &lt; Server-Timing: cfEdge;dur=6,cfOrigin;dur=124
+2 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=v0TCbbsPx2NKhCSkCSiQnYMmipa0jeW1%2BUHkdt7zBnRUB6OYzQs4JaF3Rw3pVo56rzNdbrsu53XbcQVDDvsDWBMrAKbZ5ZEWKNaZt0S3&quot;}]}
+2 &lt; Server: cloudflare
+2 &lt; CF-RAY: 9a743553ebc14c04-MIA
+2 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.46">
+      <div class="step-ref passed">46</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.47">
+      <div class="step-ref passed">47</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>print response</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.47">12:12:14.697 [print]  
+</div>   
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[3:50]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[3:50]</span>
+                <span class="scenario-name">Update data with put an patch</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>673</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[3:50]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[3:50]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;https://fakestoreapi.com&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.4">12:12:14.701 karate.env system property was: null 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.51">
+      <div class="step-ref passed">51</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def update_data = read(&#39;classpath:examples/Data/productsbody.json&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.52">
+      <div class="step-ref passed">52</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>copy put_data = update_data</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.53">
+      <div class="step-ref passed">53</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>set put_data.title = &quot;Titulo editado con nueva información con put&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.54">
+      <div class="step-ref passed">54</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>set put_data.price = 50000</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.55">
+      <div class="step-ref passed">55</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>set put_data.description = &quot;Descripcion editada con put&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.56">
+      <div class="step-ref passed">56</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>set put_data.category = &quot;Categoria editada con put&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.57">
+      <div class="step-ref passed">57</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>set put_data.imagen = &quot;Imagenput.com&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.58">
+      <div class="step-ref passed">58</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;products&#39;, 2</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.59">
+      <div class="step-ref passed">59</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request put_data</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.60">
+      <div class="step-ref passed">60</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method put</span>
+      </div>
+    </div>
+    <div class="time-cell passed">327</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.60">12:12:14.704 request:
+1 &gt; PUT https://fakestoreapi.com/products/2
+1 &gt; Content-Type: application/json; charset=UTF-8
+1 &gt; Content-Length: 210
+1 &gt; Host: fakestoreapi.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.17)
+1 &gt; Accept-Encoding: gzip,deflate
+{&quot;title&quot;:&quot;Titulo editado con nueva información con put&quot;,&quot;price&quot;:50000,&quot;description&quot;:&quot;Descripcion editada con put&quot;,&quot;category&quot;:&quot;Categoria editada con put&quot;,&quot;image&quot;:&quot;http:\/\/example.com&quot;,&quot;imagen&quot;:&quot;Imagenput.com&quot;}
+
+12:12:15.030 response time in milliseconds: 325
+1 &lt; 200
+1 &lt; Date: Mon, 01 Dec 2025 17:12:15 GMT
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; access-control-allow-origin: *
+1 &lt; etag: W/&quot;be-t1dk4rw4dTFG3gyPMNe9pGvUUL8&quot;
+1 &lt; x-powered-by: Express
+1 &lt; cf-cache-status: DYNAMIC
+1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
+1 &lt; Server-Timing: cfCacheStatus;desc=&quot;DYNAMIC&quot;
+1 &lt; Server-Timing: cfEdge;dur=5,cfOrigin;dur=125
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=K1ZGN6laiSuOUapfV8aAhknej5jFe5BMLCm2MpL5AbtOAukyMHm1%2F7unYxsMp8PJyrwKHbbYUGymwdxe8Rne4sIT0oJdBPRwC8uieJvBTuo%3D&quot;}]}
+1 &lt; Server: cloudflare
+1 &lt; CF-RAY: 9a743555fb4167e7-MIA
+1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+{&quot;id&quot;:2,&quot;title&quot;:&quot;Titulo editado con nueva información con put&quot;,&quot;price&quot;:50000,&quot;description&quot;:&quot;Descripcion editada con put&quot;,&quot;image&quot;:&quot;http://example.com&quot;,&quot;category&quot;:&quot;Categoria editada con put&quot;}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.61">
+      <div class="step-ref passed">61</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.62">
+      <div class="step-ref passed">62</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.title == &quot;Titulo editado con nueva información con put&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.63">
+      <div class="step-ref passed">63</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>print response</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.63">12:12:15.035 [print] {
+  &quot;id&quot;: 2,
+  &quot;title&quot;: &quot;Titulo editado con nueva información con put&quot;,
+  &quot;price&quot;: 50000,
+  &quot;description&quot;: &quot;Descripcion editada con put&quot;,
+  &quot;image&quot;: &quot;http://example.com&quot;,
+  &quot;category&quot;: &quot;Categoria editada con put&quot;
+}
+ 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.65">
+      <div class="step-ref passed">65</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>copy update_patch = update_data</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.66">
+      <div class="step-ref passed">66</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>set update_patch.title = &quot;Titulo editado con nueva información con path&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.67">
+      <div class="step-ref passed">67</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;products&#39;, 3</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.68">
+      <div class="step-ref passed">68</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request update_patch</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.69">
+      <div class="step-ref passed">69</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method patch</span>
+      </div>
+    </div>
+    <div class="time-cell passed">338</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.69">12:12:15.037 request:
+2 &gt; PATCH https://fakestoreapi.com/products/3
+2 &gt; Content-Type: application/json; charset=UTF-8
+2 &gt; Content-Length: 144
+2 &gt; Host: fakestoreapi.com
+2 &gt; Connection: Keep-Alive
+2 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.17)
+2 &gt; Accept-Encoding: gzip,deflate
+{&quot;title&quot;:&quot;Titulo editado con nueva información con path&quot;,&quot;price&quot;:0.1,&quot;description&quot;:&quot;string&quot;,&quot;category&quot;:&quot;string&quot;,&quot;image&quot;:&quot;http:\/\/example.com&quot;}
+
+12:12:15.374 response time in milliseconds: 336
+2 &lt; 200
+2 &lt; Date: Mon, 01 Dec 2025 17:12:15 GMT
+2 &lt; Content-Type: application/json; charset=utf-8
+2 &lt; Transfer-Encoding: chunked
+2 &lt; Connection: keep-alive
+2 &lt; access-control-allow-origin: *
+2 &lt; etag: W/&quot;95-7/2q9sBDm9zUuu9EBMuTtk/BpYE&quot;
+2 &lt; x-powered-by: Express
+2 &lt; cf-cache-status: DYNAMIC
+2 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
+2 &lt; Server-Timing: cfCacheStatus;desc=&quot;DYNAMIC&quot;
+2 &lt; Server-Timing: cfEdge;dur=5,cfOrigin;dur=124
+2 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=%2BpbA9SjVkPtdJY8wxNwWT5uQGLeKi07OUhXEwczlUJGavIC4L38xaQ4bOi7wfhp6qmW3flGLuaZp2u3gewZLPwADcVCYQ%2BWLZQ8239FC6oI%3D&quot;}]}
+2 &lt; Server: cloudflare
+2 &lt; CF-RAY: 9a7435582c230f13-MIA
+2 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+{&quot;id&quot;:3,&quot;title&quot;:&quot;Titulo editado con nueva información con path&quot;,&quot;price&quot;:0.1,&quot;description&quot;:&quot;string&quot;,&quot;image&quot;:&quot;http://example.com&quot;,&quot;category&quot;:&quot;string&quot;}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.70">
+      <div class="step-ref passed">70</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.71">
+      <div class="step-ref passed">71</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match update_patch.title == &quot;Titulo editado con nueva información con path&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.72">
+      <div class="step-ref passed">72</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>print response</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.72">12:12:15.374 [print] {
+  &quot;id&quot;: 3,
+  &quot;title&quot;: &quot;Titulo editado con nueva información con path&quot;,
+  &quot;price&quot;: 0.1,
+  &quot;description&quot;: &quot;string&quot;,
+  &quot;image&quot;: &quot;http://example.com&quot;,
+  &quot;category&quot;: &quot;string&quot;
+}
+ 
+</div>   
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[4:75]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[4:75]</span>
+                <span class="scenario-name">Detele product already created</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>355</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[4:75]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[4:75]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;https://fakestoreapi.com&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.4">12:12:15.378 karate.env system property was: null 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.76">
+      <div class="step-ref passed">76</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;products&#39;, 3</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.77">
+      <div class="step-ref passed">77</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method delete</span>
+      </div>
+    </div>
+    <div class="time-cell passed">354</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.77">12:12:15.379 request:
+1 &gt; DELETE https://fakestoreapi.com/products/3
+1 &gt; Host: fakestoreapi.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.17)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+12:12:15.732 response time in milliseconds: 353
+1 &lt; 200
+1 &lt; Date: Mon, 01 Dec 2025 17:12:15 GMT
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; access-control-allow-origin: *
+1 &lt; etag: W/&quot;1f8-CUf1dxfWtuMZ23qkYsdngAswa6E&quot;
+1 &lt; x-powered-by: Express
+1 &lt; cf-cache-status: DYNAMIC
+1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
+1 &lt; Server-Timing: cfCacheStatus;desc=&quot;DYNAMIC&quot;
+1 &lt; Server-Timing: cfEdge;dur=1,cfOrigin;dur=125
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=JJ2E9xlSHxSFYeY1Ub1vt9ftgbVRDPwHtaqhQU8gtJCFphWmVea6e1NSozO18hnfYgVjG51WiWC2Gn7qsaGsy78DJa0%2B2xnR9m7nNdJuRxk%3D&quot;}]}
+1 &lt; Server: cloudflare
+1 &lt; CF-RAY: 9a74355a6e29d965-MIA
+1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+{&quot;id&quot;:3,&quot;title&quot;:&quot;Mens Cotton Jacket&quot;,&quot;price&quot;:55.99,&quot;description&quot;:&quot;great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.&quot;,&quot;category&quot;:&quot;men&#39;s clothing&quot;,&quot;image&quot;:&quot;https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_t.png&quot;,&quot;rating&quot;:{&quot;rate&quot;:4.7,&quot;count&quot;:500}}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.78">
+      <div class="step-ref passed">78</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.79">
+      <div class="step-ref passed">79</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>print response</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.79">12:12:15.733 [print] {
+  &quot;id&quot;: 3,
+  &quot;title&quot;: &quot;Mens Cotton Jacket&quot;,
+  &quot;price&quot;: 55.99,
+  &quot;description&quot;: &quot;great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.&quot;,
+  &quot;category&quot;: &quot;men&#39;s clothing&quot;,
+  &quot;image&quot;: &quot;https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_t.png&quot;,
+  &quot;rating&quot;: {
+    &quot;rate&quot;: 4.7,
+    &quot;count&quot;: 500
+  }
+}
+ 
+</div>   
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[5:82]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[5:82]</span>
+                <span class="scenario-name">Validate data type</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>344</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[5:82]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[5:82]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;https://fakestoreapi.com&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.4">12:12:15.738 karate.env system property was: null 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.83">
+      <div class="step-ref passed">83</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;products&#39;, 1</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.84">
+      <div class="step-ref passed">84</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method get</span>
+      </div>
+    </div>
+    <div class="time-cell passed">344</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.84">12:12:15.739 request:
+1 &gt; GET https://fakestoreapi.com/products/1
+1 &gt; Host: fakestoreapi.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.17)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+12:12:16.082 response time in milliseconds: 342
+1 &lt; 200
+1 &lt; Date: Mon, 01 Dec 2025 17:12:16 GMT
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; access-control-allow-origin: *
+1 &lt; etag: W/&quot;16d-ryVvNeDR+OwaJd+i2vi/OPo/G4Y&quot;
+1 &lt; x-powered-by: Express
+1 &lt; cf-cache-status: DYNAMIC
+1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
+1 &lt; Server-Timing: cfCacheStatus;desc=&quot;DYNAMIC&quot;
+1 &lt; Server-Timing: cfEdge;dur=5,cfOrigin;dur=125
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=ywqmRjNGS59SF1Llzlv5zl9slXpWPxZiFgKqKQb22sAkXLQQK3oDmkc0p%2Fa33oFVjLOOYUyi%2F2ncQULLG2BEcNftWwZFLtE02se%2FDywByo8%3D&quot;}]}
+1 &lt; Server: cloudflare
+1 &lt; CF-RAY: 9a74355c7b919cf8-MIA
+1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+{&quot;id&quot;:1,&quot;title&quot;:&quot;Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops&quot;,&quot;price&quot;:109.95,&quot;description&quot;:&quot;Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday&quot;,&quot;category&quot;:&quot;men&#39;s clothing&quot;,&quot;image&quot;:&quot;https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png&quot;,&quot;rating&quot;:{&quot;rate&quot;:3.9,&quot;count&quot;:120}}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.85">
+      <div class="step-ref passed">85</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment">#here there is a aditional field called &quot;rate&quot;, but the api documentation don&#39;t show it</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.87">
+      <div class="step-ref passed">87</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response contains {id: &#39;#number&#39;, title: &#39;#string&#39;, price:&#39;#number&#39;, description: &#39;#string&#39;, category:&#39;#string&#39;, image: &#39;#string&#39;}</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.88">
+      <div class="step-ref passed">88</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>print response</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.88">12:12:16.082 [print] {
+  &quot;id&quot;: 1,
+  &quot;title&quot;: &quot;Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops&quot;,
+  &quot;price&quot;: 109.95,
+  &quot;description&quot;: &quot;Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday&quot;,
+  &quot;category&quot;: &quot;men&#39;s clothing&quot;,
+  &quot;image&quot;: &quot;https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png&quot;,
+  &quot;rating&quot;: {
+    &quot;rate&quot;: 3.9,
+    &quot;count&quot;: 120
+  }
+}
+ 
+</div>   
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[6.1:101]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">Karete.Test</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[6.1:101]</span>
+                <span class="scenario-name">Get a product with a no-existent id</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>333</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[6.1:101]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[6.1:101]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;https://fakestoreapi.com&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="1.4">12:12:16.086 karate.env system property was: null 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.94">
+      <div class="step-ref passed">94</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;products&#39;, 1</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.95">
+      <div class="step-ref passed">95</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method get</span>
+      </div>
+    </div>
+    <div class="time-cell passed">332</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="1.95">12:12:16.087 request:
+1 &gt; GET https://fakestoreapi.com/products/1
+1 &gt; Host: fakestoreapi.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.17)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+12:12:16.418 response time in milliseconds: 330
+1 &lt; 200
+1 &lt; Date: Mon, 01 Dec 2025 17:12:16 GMT
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; access-control-allow-origin: *
+1 &lt; etag: W/&quot;16d-ryVvNeDR+OwaJd+i2vi/OPo/G4Y&quot;
+1 &lt; x-powered-by: Express
+1 &lt; cf-cache-status: DYNAMIC
+1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
+1 &lt; Server-Timing: cfCacheStatus;desc=&quot;DYNAMIC&quot;
+1 &lt; Server-Timing: cfEdge;dur=4,cfOrigin;dur=123
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=XQaZAYoW%2F8yrs5wBczXEjiF4t6i6CFsdKcGRt8HFf9hcQzLZJLvxglIF%2B7vXuJAe%2BXEwrtlg2lNFIL33c1jmcIvAieLjT0nUPNxNkX3wLXQ%3D&quot;}]}
+1 &lt; Server: cloudflare
+1 &lt; CF-RAY: 9a74355eaa8223d7-MIA
+1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+{&quot;id&quot;:1,&quot;title&quot;:&quot;Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops&quot;,&quot;price&quot;:109.95,&quot;description&quot;:&quot;Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday&quot;,&quot;category&quot;:&quot;men&#39;s clothing&quot;,&quot;image&quot;:&quot;https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png&quot;,&quot;rating&quot;:{&quot;rate&quot;:3.9,&quot;count&quot;:120}}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.96">
+      <div class="step-ref passed">96</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="1.97">
+      <div class="step-ref passed">97</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>print response</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="1.97">12:12:16.419 [print] {
+  &quot;id&quot;: 1,
+  &quot;title&quot;: &quot;Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops&quot;,
+  &quot;price&quot;: 109.95,
+  &quot;description&quot;: &quot;Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday&quot;,
+  &quot;category&quot;: &quot;men&#39;s clothing&quot;,
+  &quot;image&quot;: &quot;https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png&quot;,
+  &quot;rating&quot;: {
+    &quot;rate&quot;: 3.9,
+    &quot;count&quot;: 120
+  }
+}
+ 
+</div>   
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[6.2:102]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">Karete.Test</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[6.2:102]</span>
+                <span class="scenario-name">Get a product with a no-existent id</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>344</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[6.2:102]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[6.2:102]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;https://fakestoreapi.com&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="2.4">12:12:16.422 karate.env system property was: null 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.94">
+      <div class="step-ref passed">94</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;products&#39;, 2</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.95">
+      <div class="step-ref passed">95</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method get</span>
+      </div>
+    </div>
+    <div class="time-cell passed">344</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="2.95">12:12:16.423 request:
+1 &gt; GET https://fakestoreapi.com/products/2
+1 &gt; Host: fakestoreapi.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.17)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+12:12:16.766 response time in milliseconds: 342
+1 &lt; 200
+1 &lt; Date: Mon, 01 Dec 2025 17:12:16 GMT
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; access-control-allow-origin: *
+1 &lt; etag: W/&quot;23a-0iB5/10WS3ieJsZi8d+ziNIQAxQ&quot;
+1 &lt; x-powered-by: Express
+1 &lt; cf-cache-status: DYNAMIC
+1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
+1 &lt; Server-Timing: cfCacheStatus;desc=&quot;DYNAMIC&quot;
+1 &lt; Server-Timing: cfEdge;dur=6,cfOrigin;dur=125
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=ZCxC5i8qilpUeX2NGrA0wZ0%2FnE%2FF0ncCuIb53YThXSHRslKG3f0C0Hvmp6BdEUeklW%2F5Zkaem2aBh5kRh9v2dwkT8cBKswsMgdiB9RCJY9c%3D&quot;}]}
+1 &lt; Server: cloudflare
+1 &lt; CF-RAY: 9a743560cac867e4-MIA
+1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+{&quot;id&quot;:2,&quot;title&quot;:&quot;Mens Casual Premium Slim Fit T-Shirts &quot;,&quot;price&quot;:22.3,&quot;description&quot;:&quot;Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight &amp; soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.&quot;,&quot;category&quot;:&quot;men&#39;s clothing&quot;,&quot;image&quot;:&quot;https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_t.png&quot;,&quot;rating&quot;:{&quot;rate&quot;:4.1,&quot;count&quot;:259}}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.96">
+      <div class="step-ref passed">96</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="2.97">
+      <div class="step-ref passed">97</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>print response</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="2.97">12:12:16.766 [print] {
+  &quot;id&quot;: 2,
+  &quot;title&quot;: &quot;Mens Casual Premium Slim Fit T-Shirts &quot;,
+  &quot;price&quot;: 22.3,
+  &quot;description&quot;: &quot;Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight &amp; soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.&quot;,
+  &quot;category&quot;: &quot;men&#39;s clothing&quot;,
+  &quot;image&quot;: &quot;https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_t.png&quot;,
+  &quot;rating&quot;: {
+    &quot;rate&quot;: 4.1,
+    &quot;count&quot;: 259
+  }
+}
+ 
+</div>   
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[6.3:103]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">Karete.Test</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[6.3:103]</span>
+                <span class="scenario-name">Get a product with a no-existent id</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>346</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[6.3:103]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[6.3:103]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;https://fakestoreapi.com&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="3.4">12:12:16.770 karate.env system property was: null 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.94">
+      <div class="step-ref passed">94</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;products&#39;, 3</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.95">
+      <div class="step-ref passed">95</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method get</span>
+      </div>
+    </div>
+    <div class="time-cell passed">345</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="3.95">12:12:16.771 request:
+1 &gt; GET https://fakestoreapi.com/products/3
+1 &gt; Host: fakestoreapi.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.17)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+12:12:17.115 response time in milliseconds: 343
+1 &lt; 200
+1 &lt; Date: Mon, 01 Dec 2025 17:12:17 GMT
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; access-control-allow-origin: *
+1 &lt; etag: W/&quot;1f8-CUf1dxfWtuMZ23qkYsdngAswa6E&quot;
+1 &lt; x-powered-by: Express
+1 &lt; cf-cache-status: DYNAMIC
+1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
+1 &lt; Server-Timing: cfCacheStatus;desc=&quot;DYNAMIC&quot;
+1 &lt; Server-Timing: cfEdge;dur=6,cfOrigin;dur=125
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=rlQSYFw3x1Q5amT1fwLIy%2BB2Enh5Ct%2BDj%2B5B%2Fh4JGy6yqM5D5inkoIvFXVuE0TJ%2FKT%2BmTUKMjL%2Bi2ims0Qq16cIoDtMIH6Q%2FW96i9%2FXgV1E%3D&quot;}]}
+1 &lt; Server: cloudflare
+1 &lt; CF-RAY: 9a743562ff3b5c71-MIA
+1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+{&quot;id&quot;:3,&quot;title&quot;:&quot;Mens Cotton Jacket&quot;,&quot;price&quot;:55.99,&quot;description&quot;:&quot;great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.&quot;,&quot;category&quot;:&quot;men&#39;s clothing&quot;,&quot;image&quot;:&quot;https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_t.png&quot;,&quot;rating&quot;:{&quot;rate&quot;:4.7,&quot;count&quot;:500}}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.96">
+      <div class="step-ref passed">96</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="3.97">
+      <div class="step-ref passed">97</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>print response</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="3.97">12:12:17.117 [print] {
+  &quot;id&quot;: 3,
+  &quot;title&quot;: &quot;Mens Cotton Jacket&quot;,
+  &quot;price&quot;: 55.99,
+  &quot;description&quot;: &quot;great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.&quot;,
+  &quot;category&quot;: &quot;men&#39;s clothing&quot;,
+  &quot;image&quot;: &quot;https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_t.png&quot;,
+  &quot;rating&quot;: {
+    &quot;rate&quot;: 4.7,
+    &quot;count&quot;: 500
+  }
+}
+ 
+</div>   
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[6.4:104]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">Karete.Test</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[6.4:104]</span>
+                <span class="scenario-name">Get a product with a no-existent id</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>346</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[6.4:104]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[6.4:104]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;https://fakestoreapi.com&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="4.4">12:12:17.121 karate.env system property was: null 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.94">
+      <div class="step-ref passed">94</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;products&#39;, 500</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.95">
+      <div class="step-ref passed">95</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method get</span>
+      </div>
+    </div>
+    <div class="time-cell passed">345</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="4.95">12:12:17.123 request:
+1 &gt; GET https://fakestoreapi.com/products/500
+1 &gt; Host: fakestoreapi.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.17)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+12:12:17.467 response time in milliseconds: 343
+1 &lt; 200
+1 &lt; Date: Mon, 01 Dec 2025 17:12:17 GMT
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; access-control-allow-origin: *
+1 &lt; x-powered-by: Express
+1 &lt; cf-cache-status: DYNAMIC
+1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
+1 &lt; Server-Timing: cfCacheStatus;desc=&quot;DYNAMIC&quot;
+1 &lt; Server-Timing: cfEdge;dur=5,cfOrigin;dur=123
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=t0o1eXUryyJ6BFm0tPZJrNTvEfK3ZS9wOwtQ1B69YIcrupABnj9Ccj5DrF84z%2BDtlqy%2BsTIe3isvwFuSvOi6QvRQOrhDuWho1HgP1C9s1NQ%3D&quot;}]}
+1 &lt; Server: cloudflare
+1 &lt; CF-RAY: 9a7435653d8025b3-MIA
+1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.96">
+      <div class="step-ref passed">96</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="4.97">
+      <div class="step-ref passed">97</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>print response</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="4.97">12:12:17.467 [print]  
+</div>   
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[7:106]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[7:106]</span>
+                <span class="scenario-name">try to delete a id non-existent</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>410</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[7:106]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[7:106]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;https://fakestoreapi.com&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.4">12:12:17.471 karate.env system property was: null 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.107">
+      <div class="step-ref passed">107</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;products&#39;, 900</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.108">
+      <div class="step-ref passed">108</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method delete</span>
+      </div>
+    </div>
+    <div class="time-cell passed">409</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.108">12:12:17.472 request:
+1 &gt; DELETE https://fakestoreapi.com/products/900
+1 &gt; Host: fakestoreapi.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.17)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+12:12:17.880 response time in milliseconds: 408
+1 &lt; 200
+1 &lt; Date: Mon, 01 Dec 2025 17:12:18 GMT
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; access-control-allow-origin: *
+1 &lt; x-powered-by: Express
+1 &lt; cf-cache-status: DYNAMIC
+1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
+1 &lt; Server-Timing: cfCacheStatus;desc=&quot;DYNAMIC&quot;
+1 &lt; Server-Timing: cfEdge;dur=4,cfOrigin;dur=125
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=rGcegLFdr3iI5dMOwVi3pwbdnxOi50ObFfQnaIJY2wE5FlOqyj2Awz9umyGG9x3G7xj2dlJzzhWCpvWYQ%2FUhlv6N4iEvDsfNmFHwGCmIVXk%3D&quot;}]}
+1 &lt; Server: cloudflare
+1 &lt; CF-RAY: 9a743567bdbe6e68-MIA
+1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.109">
+      <div class="step-ref passed">109</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment">#The response should be 400, because this id do not exist.</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.111">
+      <div class="step-ref passed">111</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>print response</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.111">12:12:17.881 [print]  
+</div>   
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[8:113]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">solo</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[8:113]</span>
+                <span class="scenario-name">Validate data type</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>341</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[8:113]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[8:113]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;https://fakestoreapi.com&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.4">12:12:17.884 karate.env system property was: null 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.114">
+      <div class="step-ref passed">114</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;products&#39;, 1</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.115">
+      <div class="step-ref passed">115</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method get</span>
+      </div>
+    </div>
+    <div class="time-cell passed">340</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.115">12:12:17.886 request:
+1 &gt; GET https://fakestoreapi.com/products/1
+1 &gt; Host: fakestoreapi.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.17)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+12:12:18.224 response time in milliseconds: 338
+1 &lt; 200
+1 &lt; Date: Mon, 01 Dec 2025 17:12:18 GMT
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; access-control-allow-origin: *
+1 &lt; etag: W/&quot;16d-ryVvNeDR+OwaJd+i2vi/OPo/G4Y&quot;
+1 &lt; x-powered-by: Express
+1 &lt; cf-cache-status: DYNAMIC
+1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
+1 &lt; Server-Timing: cfCacheStatus;desc=&quot;DYNAMIC&quot;
+1 &lt; Server-Timing: cfEdge;dur=3,cfOrigin;dur=123
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=dwK7owyHl9TK7kewCP0fpf3JTDyoqtbvmR%2FwgtMCnEdt3Hal2O5q1%2FdDXChVAkhJCfNZ1ruUIqTsB3jla%2BAB8pOkW69n7LBgSQw%2FgDkInRA%3D&quot;}]}
+1 &lt; Server: cloudflare
+1 &lt; CF-RAY: 9a743569fe233e91-MIA
+1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+{&quot;id&quot;:1,&quot;title&quot;:&quot;Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops&quot;,&quot;price&quot;:109.95,&quot;description&quot;:&quot;Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday&quot;,&quot;category&quot;:&quot;men&#39;s clothing&quot;,&quot;image&quot;:&quot;https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png&quot;,&quot;rating&quot;:{&quot;rate&quot;:3.9,&quot;count&quot;:120}}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.116">
+      <div class="step-ref passed">116</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment">#here should be 400, because title ha a &quot;strings&quot; as a data type, but api responds with 200, instead 400</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.118">
+      <div class="step-ref passed">118</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response == {id: &#39;#number&#39;, title: &#39;#string&#39;, price:&#39;#number&#39;, description: &#39;#string&#39;, category:&#39;#string&#39;, image: &#39;#string&#39;, rating: {&quot;rate&quot;:3.9,&quot;count&quot;:120}}</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.119">
+      <div class="step-ref passed">119</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>print response</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.119">12:12:18.225 [print] {
+  &quot;id&quot;: 1,
+  &quot;title&quot;: &quot;Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops&quot;,
+  &quot;price&quot;: 109.95,
+  &quot;description&quot;: &quot;Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday&quot;,
+  &quot;category&quot;: &quot;men&#39;s clothing&quot;,
+  &quot;image&quot;: &quot;https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png&quot;,
+  &quot;rating&quot;: {
+    &quot;rate&quot;: 3.9,
+    &quot;count&quot;: 120
+  }
+}
+ 
+</div>   
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[9:121]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">solo</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[9:121]</span>
+                <span class="scenario-name">Validate miss fields</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>341</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[9:121]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[9:121]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;https://fakestoreapi.com&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.4">12:12:18.229 karate.env system property was: null 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.122">
+      <div class="step-ref passed">122</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;products&#39;, 1</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.123">
+      <div class="step-ref passed">123</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method get</span>
+      </div>
+    </div>
+    <div class="time-cell passed">340</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.123">12:12:18.230 request:
+1 &gt; GET https://fakestoreapi.com/products/1
+1 &gt; Host: fakestoreapi.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.17)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+12:12:18.569 response time in milliseconds: 339
+1 &lt; 200
+1 &lt; Date: Mon, 01 Dec 2025 17:12:18 GMT
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; access-control-allow-origin: *
+1 &lt; etag: W/&quot;16d-ryVvNeDR+OwaJd+i2vi/OPo/G4Y&quot;
+1 &lt; x-powered-by: Express
+1 &lt; cf-cache-status: DYNAMIC
+1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
+1 &lt; Server-Timing: cfCacheStatus;desc=&quot;DYNAMIC&quot;
+1 &lt; Server-Timing: cfEdge;dur=5,cfOrigin;dur=124
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=q8L2MNJhBf%2B%2F6zGFK46F8NZQeDcvrfJbVocBcBLY%2FZPcReWZMDmUjKDHDIQEGEJGQStCpe8LzTKR7hsSULg6CCkSdMv4lN0FpatthWaBPV4%3D&quot;}]}
+1 &lt; Server: cloudflare
+1 &lt; CF-RAY: 9a74356c1c32a54e-MIA
+1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+{&quot;id&quot;:1,&quot;title&quot;:&quot;Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops&quot;,&quot;price&quot;:109.95,&quot;description&quot;:&quot;Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday&quot;,&quot;category&quot;:&quot;men&#39;s clothing&quot;,&quot;image&quot;:&quot;https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png&quot;,&quot;rating&quot;:{&quot;rate&quot;:3.9,&quot;count&quot;:120}}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.124">
+      <div class="step-ref passed">124</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment">#here should be 400, because it&#39;s miss field &quot;rate&quot; but the api response with 200</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.126">
+      <div class="step-ref passed">126</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response == {id: &#39;#number&#39;, title: &#39;#string&#39;, price:&#39;#number&#39;, description: &#39;#string&#39;, category:&#39;#string&#39;, image: &#39;#string&#39;, rating: {&quot;rate&quot;:3.9,&quot;count&quot;:120}}</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.127">
+      <div class="step-ref passed">127</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>print response</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.127">12:12:18.570 [print] {
+  &quot;id&quot;: 1,
+  &quot;title&quot;: &quot;Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops&quot;,
+  &quot;price&quot;: 109.95,
+  &quot;description&quot;: &quot;Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday&quot;,
+  &quot;category&quot;: &quot;men&#39;s clothing&quot;,
+  &quot;image&quot;: &quot;https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png&quot;,
+  &quot;rating&quot;: {
+    &quot;rate&quot;: 3.9,
+    &quot;count&quot;: 120
+  }
+}
+ 
+</div>   
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[10:129]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">solo</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[10:129]</span>
+                <span class="scenario-name">Create new product with non-existent field</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>338</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[10:129]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[10:129]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;https://fakestoreapi.com&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.4">12:12:18.574 karate.env system property was: null 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.130">
+      <div class="step-ref passed">130</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def invalid_new_product = read(&#39;classpath:examples/Data/productsbody.json&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.131">
+      <div class="step-ref passed">131</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>set invalid_new_product.title = &quot;Titulo nuevo&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.132">
+      <div class="step-ref passed">132</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>set invalid_new_product.price = 40000</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.133">
+      <div class="step-ref passed">133</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>set invalid_new_product.description = &quot;Nueva descripción&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.134">
+      <div class="step-ref passed">134</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>set invalid_new_product.category = &quot;Nueva categoría&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.135">
+      <div class="step-ref passed">135</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>set invalid_new_product.image = &quot;example.com&quot;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.136">
+      <div class="step-ref passed">136</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>set invalid_new_product.rating = {&quot;rate&quot;:3.9,&quot;count&quot;:120}</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment">#Another don&#39;t exist, so the status should be 400</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment">#* set invalid_new_product.another = &quot;No debería estara quí&quot;</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.139">
+      <div class="step-ref passed">139</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;products&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.140">
+      <div class="step-ref passed">140</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request invalid_new_product</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.141">
+      <div class="step-ref passed">141</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method post</span>
+      </div>
+    </div>
+    <div class="time-cell passed">335</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.141">12:12:18.577 request:
+1 &gt; POST https://fakestoreapi.com/products
+1 &gt; Content-Type: application/json; charset=UTF-8
+1 &gt; Content-Length: 159
+1 &gt; Host: fakestoreapi.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.17)
+1 &gt; Accept-Encoding: gzip,deflate
+{&quot;title&quot;:&quot;Titulo nuevo&quot;,&quot;price&quot;:40000,&quot;description&quot;:&quot;Nueva descripción&quot;,&quot;category&quot;:&quot;Nueva categoría&quot;,&quot;image&quot;:&quot;example.com&quot;,&quot;rating&quot;:{&quot;rate&quot;:3.9,&quot;count&quot;:120}}
+
+12:12:18.911 response time in milliseconds: 334
+1 &lt; 201
+1 &lt; Date: Mon, 01 Dec 2025 17:12:19 GMT
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Content-Length: 133
+1 &lt; Connection: keep-alive
+1 &lt; access-control-allow-origin: *
+1 &lt; etag: W/&quot;85-cZIDZR6npOMsSxi99eGcI1cRslA&quot;
+1 &lt; x-powered-by: Express
+1 &lt; cf-cache-status: DYNAMIC
+1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
+1 &lt; Server-Timing: cfCacheStatus;desc=&quot;DYNAMIC&quot;
+1 &lt; Server-Timing: cfEdge;dur=6,cfOrigin;dur=123
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=zEAIdKY4TuyxLF5fh1%2FzUn31RROVRFMKouXBnSLMyt4uA7sSweY9KMh8cxPLJ9RpMLbyyVGa6kqUYnrk72JzhHE3p%2FO0%2F3oYQ0yhNJ%2Fw%2FzE%3D&quot;}]}
+1 &lt; Server: cloudflare
+1 &lt; CF-RAY: 9a74356e3e97b356-MIA
+1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+{&quot;id&quot;:21,&quot;title&quot;:&quot;Titulo nuevo&quot;,&quot;price&quot;:40000,&quot;description&quot;:&quot;Nueva descripción&quot;,&quot;image&quot;:&quot;example.com&quot;,&quot;category&quot;:&quot;Nueva categoría&quot;}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.142">
+      <div class="step-ref passed">142</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 201</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.143">
+      <div class="step-ref passed">143</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>print response</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.143">12:12:18.912 [print] {
+  &quot;id&quot;: 21,
+  &quot;title&quot;: &quot;Titulo nuevo&quot;,
+  &quot;price&quot;: 40000,
+  &quot;description&quot;: &quot;Nueva descripción&quot;,
+  &quot;image&quot;: &quot;example.com&quot;,
+  &quot;category&quot;: &quot;Nueva categoría&quot;
+}
+ 
+</div>   
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[11:145]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                <a class="badge badge-primary" href="karate-tags.html">solo</a>
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[11:145]</span>
+                <span class="scenario-name">range in price very high</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time failed">
+              <span>ms:</span>&nbsp;<span>328</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[11:145]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[11:145]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url &#39;https://fakestoreapi.com&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.4">12:12:18.916 karate.env system property was: null 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.146">
+      <div class="step-ref passed">146</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def price_high = read(&#39;classpath:examples/Data/productsbody.json&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.147">
+      <div class="step-ref passed">147</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>set price_high.price = 1e60</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.148">
+      <div class="step-ref passed">148</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;products&#39;, 1</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.149">
+      <div class="step-ref passed">149</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>request price_high</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.150">
+      <div class="step-ref passed">150</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method put</span>
+      </div>
+    </div>
+    <div class="time-cell passed">327</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.150">12:12:18.918 request:
+1 &gt; PUT https://fakestoreapi.com/products/1
+1 &gt; Content-Type: application/json; charset=UTF-8
+1 &gt; Content-Length: 107
+1 &gt; Host: fakestoreapi.com
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.17)
+1 &gt; Accept-Encoding: gzip,deflate
+{&quot;title&quot;:&quot;string&quot;,&quot;price&quot;:1.0E60,&quot;description&quot;:&quot;string&quot;,&quot;category&quot;:&quot;string&quot;,&quot;image&quot;:&quot;http:\/\/example.com&quot;}
+
+12:12:19.243 response time in milliseconds: 324
+1 &lt; 200
+1 &lt; Date: Mon, 01 Dec 2025 17:12:19 GMT
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Transfer-Encoding: chunked
+1 &lt; Connection: keep-alive
+1 &lt; access-control-allow-origin: *
+1 &lt; etag: W/&quot;6f-EEDiLv81KLcQBWWf5Fzmgd1ex6Y&quot;
+1 &lt; x-powered-by: Express
+1 &lt; cf-cache-status: DYNAMIC
+1 &lt; Nel: {&quot;report_to&quot;:&quot;cf-nel&quot;,&quot;success_fraction&quot;:0.0,&quot;max_age&quot;:604800}
+1 &lt; Server-Timing: cfCacheStatus;desc=&quot;DYNAMIC&quot;
+1 &lt; Server-Timing: cfEdge;dur=6,cfOrigin;dur=124
+1 &lt; Report-To: {&quot;group&quot;:&quot;cf-nel&quot;,&quot;max_age&quot;:604800,&quot;endpoints&quot;:[{&quot;url&quot;:&quot;https://a.nel.cloudflare.com/report/v4?s=BMBoSVjiqlY9Y%2BTZKqIHm5N5GdQcDWLt5ZdLHW6xOZ3hnThsCUlTprF1hrgCvqOeR6kuUqf%2FS0Jf0HqoVhDEb0gVbXwLCU6I4vmUJAsN&quot;}]}
+1 &lt; Server: cloudflare
+1 &lt; CF-RAY: 9a7435704b643dd2-MIA
+1 &lt; alt-svc: h3=&quot;:443&quot;; ma=86400
+{&quot;id&quot;:1,&quot;title&quot;:&quot;string&quot;,&quot;price&quot;:1e+60,&quot;description&quot;:&quot;string&quot;,&quot;image&quot;:&quot;http://example.com&quot;,&quot;category&quot;:&quot;string&quot;}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.151">
+      <div class="step-ref failed">151</div>
+      
+      <div class="step-cell failed">
+        <span>And</span>&nbsp;<span>status 201</span>
+      </div>
+    </div>
+    <div class="time-cell failed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.151">12:12:19.244 classpath:examples/products/products.feature:151
+And status 201
+status code was: 200, expected: 201, response time in milliseconds: 324, url: https://fakestoreapi.com/products/1, response: 
+{&quot;id&quot;:1,&quot;title&quot;:&quot;string&quot;,&quot;price&quot;:1e+60,&quot;description&quot;:&quot;string&quot;,&quot;image&quot;:&quot;http://example.com&quot;,&quot;category&quot;:&quot;string&quot;}
+classpath:examples/products/products.feature:151
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.152">
+      <div class="step-ref skipped">152</div>
+      
+      <div class="step-cell skipped">
+        <span>And</span>&nbsp;<span>print reponse</span>
+      </div>
+    </div>
+    <div class="time-cell skipped">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+

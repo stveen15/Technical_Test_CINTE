@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"examples\/products\/products[1:7]","start":1764620806667,"end":1764620807379,"title":"examples\/products\/products[1:7] 15:26:46.667-15:26:47.379 Get all ids, an post new id with an id already create."},{"id":2,"group":1,"content":"examples\/products\/products[2:23]","start":1764620807384,"end":1764620808390,"title":"examples\/products\/products[2:23] 15:26:47.384-15:26:48.390 Create a new id with a external JSON."},{"id":3,"group":1,"content":"examples\/products\/products[3:49]","start":1764620808394,"end":1764620809041,"title":"examples\/products\/products[3:49] 15:26:48.394-15:26:49.041 Update data with put an patch"},{"id":4,"group":1,"content":"examples\/products\/products[4:73]","start":1764620809046,"end":1764620809395,"title":"examples\/products\/products[4:73] 15:26:49.046-15:26:49.395 Detele product already created"},{"id":5,"group":1,"content":"examples\/products\/products[5:79]","start":1764620809399,"end":1764620809739,"title":"examples\/products\/products[5:79] 15:26:49.399-15:26:49.739 Validate data type"},{"id":6,"group":1,"content":"examples\/products\/products[6.1:98]","start":1764620809743,"end":1764620810082,"title":"examples\/products\/products[6.1:98] 15:26:49.743-15:26:50.082 Get a product with a no-existent id"},{"id":7,"group":1,"content":"examples\/products\/products[6.2:99]","start":1764620810086,"end":1764620810437,"title":"examples\/products\/products[6.2:99] 15:26:50.086-15:26:50.437 Get a product with a no-existent id"},{"id":8,"group":1,"content":"examples\/products\/products[6.3:100]","start":1764620810441,"end":1764620810775,"title":"examples\/products\/products[6.3:100] 15:26:50.441-15:26:50.775 Get a product with a no-existent id"},{"id":9,"group":1,"content":"examples\/products\/products[6.4:101]","start":1764620810779,"end":1764620811121,"title":"examples\/products\/products[6.4:101] 15:26:50.779-15:26:51.121 Get a product with a no-existent id","className":"failed"},{"id":10,"group":1,"content":"examples\/products\/products[7:103]","start":1764620811126,"end":1764620811450,"title":"examples\/products\/products[7:103] 15:26:51.126-15:26:51.450 Try to delete a id non-existent","className":"failed"},{"id":11,"group":1,"content":"examples\/products\/products[8:110]","start":1764620811454,"end":1764620811790,"title":"examples\/products\/products[8:110] 15:26:51.454-15:26:51.790 Validate data type","className":"failed"},{"id":12,"group":1,"content":"examples\/products\/products[9:118]","start":1764620811795,"end":1764620812138,"title":"examples\/products\/products[9:118] 15:26:51.795-15:26:52.138 Validate missing fields","className":"failed"},{"id":13,"group":1,"content":"examples\/products\/products[10:126]","start":1764620812142,"end":1764620812475,"title":"examples\/products\/products[10:126] 15:26:52.142-15:26:52.475 Create new product with non-existent field"},{"id":14,"group":1,"content":"examples\/products\/products[11:142]","start":1764620812479,"end":1764620812805,"title":"examples\/products\/products[11:142] 15:26:52.479-15:26:52.805 range in price very high"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
