@@ -30,9 +30,8 @@ test - java - examples
                     ExamplesTest.java
 ```
 
-4. Para ejecutar las pruebas escribir "mvn test" 
--mvn test -Dtest=users_Test, si se solicita hacer las pruebas de un feature en especifico. 
--Para ejecutar las pruebas en paralelo ejecutar: mvn test -Dtest=ExamplesTest
+4. Para ejecutar las pruebas escribir: mvn test -Dtest=ExamplesTest
+- Si se solicita hacer las pruebas de un feature en especifico: mvn test -Dtest=users_Test 
 
 5. Para visualizar el reporte de resutlados propio de Karate, usar la ruta (completar): target/karate-reports/karate-summary.html
 6. Hallazgos principales: De los 4 features (products, carts, users, auth), tres presentan errores o inconsistencias (products, carts, users) y uno tuvo resultados satisfactorios (auth).
